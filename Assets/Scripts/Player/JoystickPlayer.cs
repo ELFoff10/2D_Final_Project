@@ -2,7 +2,7 @@
 
 public class JoystickPlayer : MonoBehaviour
 {
-    [SerializeField] private FixedJoystick dynamicJoystick;
+    [SerializeField] private FixedJoystick _fixedJoystick;
     
     private PlayerMovement _playerMovement;
 
@@ -11,9 +11,9 @@ public class JoystickPlayer : MonoBehaviour
         _playerMovement = GetComponent<PlayerMovement>();
     }
 
-    public void FixedUpdate()
+    public void Update()
     {
-        _playerMovement.moveDirection.x = dynamicJoystick.Horizontal;
-        _playerMovement.moveDirection.y = dynamicJoystick.Vertical;
+        _playerMovement.moveDir.x = _fixedJoystick.Horizontal;
+        _playerMovement.moveDir.y = _fixedJoystick.Vertical;
     }
 }

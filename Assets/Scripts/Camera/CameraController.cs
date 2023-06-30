@@ -1,14 +1,14 @@
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class CameraController : MonoBehaviour
 {
-    [SerializeField] private new Camera camera;
+    [SerializeField] private Camera mainCamera;
     [SerializeField] private Transform target;
-    [SerializeField] private float cameraOffsetZ; 
 
-    private void FixedUpdate()
+    private void Update()
     {
         var position = target.position;
-        camera.transform.position = new Vector3(position.x, position.y, cameraOffsetZ);
+        mainCamera.transform.position = new Vector3(position.x, position.y, -10);
     }
 }
