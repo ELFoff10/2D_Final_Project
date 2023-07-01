@@ -123,96 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &83244059
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 83244060}
-  - component: {fileID: 83244061}
-  m_Layer: 0
-  m_Name: Sword_Controller
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &83244060
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 83244059}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 4083413907861738108}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &83244061
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 83244059}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a939eefdc208eb24fa540e9c2aa7d4c7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  weaponData: {fileID: 11400000, guid: 250250fc3dc489f40b563b8d29777ae7, type: 2}
---- !u!1 &217576927
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 217576928}
-  - component: {fileID: 217576929}
-  m_Layer: 0
-  m_Name: Arrow_Controller
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &217576928
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 217576927}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 4083413907861738108}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &217576929
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 217576927}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a22646a6b570c6b4a9d0088d1f6f0a3d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  weaponData: {fileID: 11400000, guid: e7c595b0d5bff9b479da76c71993e0f6, type: 2}
 --- !u!1 &843062980
 GameObject:
   m_ObjectHideFlags: 0
@@ -290,8 +200,12 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 505970606342046093, guid: be9acf98119b16c4c91fe6a1f4e009d2, type: 3}
       propertyPath: drops.Array.data[0].dropRate
-      value: 25
+      value: 100
       objectReference: {fileID: 0}
+    - target: {fileID: 505970606342046093, guid: be9acf98119b16c4c91fe6a1f4e009d2, type: 3}
+      propertyPath: drops.Array.data[0].itemPrefab
+      value: 
+      objectReference: {fileID: 4047629460996333739, guid: dfe33bfe7ca5a02409bd24c1dc01e530, type: 3}
     - target: {fileID: 4250300473285927347, guid: be9acf98119b16c4c91fe6a1f4e009d2, type: 3}
       propertyPath: m_Name
       value: Flying_Bat
@@ -614,6 +528,68 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aaa2c939c0359ac4dbce3f49e8b90252, type: 3}
+--- !u!1 &1841715718
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1841715719}
+  - component: {fileID: 1841715721}
+  - component: {fileID: 1841715720}
+  m_Layer: 0
+  m_Name: Collector
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1841715719
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1841715718}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4083413907861738108}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1841715720
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1841715718}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b904a52c9c5baf4eaf8ef09fad4fc82, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pullSpeed: 300
+--- !u!58 &1841715721
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1841715718}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
 --- !u!1 &1979728708
 GameObject:
   m_ObjectHideFlags: 0
@@ -826,8 +802,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4083413906385720916}
-  - {fileID: 217576928}
-  - {fileID: 83244060}
+  - {fileID: 1841715719}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -921,7 +896,6 @@ GameObject:
   - component: {fileID: 4083413907861738110}
   - component: {fileID: 4083413907861738113}
   - component: {fileID: 4083413907861738112}
-  - component: {fileID: 4083413907861738118}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -1029,29 +1003,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ae4fbd2d42ef494bb2f0b17f83e813f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CharacterData: {fileID: 11400000, guid: 89246b8c41763b34b946e646fe73b486, type: 2}
   _currentHealth: 0
   _currentRecovery: 0
   _currentMoveSpeed: 0
   _currentMight: 0
   _currentProjectileSpeed: 0
+  currentMagnet: 0
+  spawnedWeapons: []
   Experience: 0
   Level: 1
   ExperienceCap: 100
   ExperienceCapIncrease: 100
   invincibilityDuration: 0.5
---- !u!114 &4083413907861738118
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4083413907861738111}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3b904a52c9c5baf4eaf8ef09fad4fc82, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &5306262105627642156
 PrefabInstance:
   m_ObjectHideFlags: 0

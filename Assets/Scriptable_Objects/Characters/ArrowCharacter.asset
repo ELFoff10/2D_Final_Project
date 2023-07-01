@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2895d4c275a686145af0a059749ac748, type: 3}
-  m_Name: SwordCharacter
+  m_Name: ArrowCharacter
   m_EditorClassIdentifier: 
-  startingWeapon: {fileID: 81333858121102419, guid: 7fc95dbe7a9d6a3469a8636bbd65996c, type: 3}
+  startingWeapon: {fileID: 7216345248615862975, guid: 97814b7b2a1416e4496fbcd6861796e5, type: 3}
   maxHealth: 1000
   recovery: 1
   moveSpeed: 5
