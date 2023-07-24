@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 /// <summary>
@@ -6,42 +5,47 @@ using UnityEngine;
 /// </summary>
 public class MeleeWeaponBehaviour : MonoBehaviour
 {
-    public WeaponScriptableObject weaponData;
-    
-    public float destroyAfterSeconds;
+    [SerializeField] private WeaponScriptableObject _weaponData;
+    [SerializeField] private float _destroyAfterSeconds;
     
     // Current stats
-    protected float currentDamage;
-    protected float currentSpeed;
-    protected float currentCooldownDuration;
-    protected int currentPierce;
+    protected float CurrentDamage;
+    protected float CurrentSpeed;
+    protected float CurrentCooldownDuration;
+    protected int CurrentPierce;
 
     private void Awake()
     {
-        currentDamage = weaponData.Damage;
-        currentSpeed = weaponData.Speed;
-        currentCooldownDuration = weaponData.CooldownDuration;
-        currentPierce = weaponData.Pierce;
+        CurrentDamage = _weaponData.Damage;
+        CurrentSpeed = _weaponData.Speed;
+        CurrentCooldownDuration = _weaponData.CooldownDuration;
+        CurrentPierce = _weaponData.Pierce;
     }
 
     protected virtual void Start()
     {
-        Destroy(gameObject, destroyAfterSeconds);
+        Destroy(gameObject, _destroyAfterSeconds);
     }
 
     protected virtual void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Enemy"))
         {
-            EnemyStats enemy = other.GetComponent<EnemyStats>();
-            enemy.TakeDamage(currentDamage);
+            var enemy = other.GetComponent<EnemyStats>();
+            enemy.TakeDamage(GetCurrentDamage());
         }
         else if(other.CompareTag("Prop"))
         {
             if (other.gameObject.TryGetComponent(out BreakableProps breakable))
             {
-                breakable.TakeDamage(currentDamage);
+                breakable.TakeDamage(GetCurrentDamage());
             }
         }
     }
+    
+    public float GetCurrentDamage()
+    {
+        return CurrentDamage *= FindObjectOfType<PlayerStats>().CurrentMight;
+    }
+
 }

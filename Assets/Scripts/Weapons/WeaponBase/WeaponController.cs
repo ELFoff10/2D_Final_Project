@@ -1,33 +1,43 @@
+using System;
+using UniRx;
 using UnityEngine;
 
-/// <summary>
-/// Base script for all weapon controllers
-/// </summary>
 public class WeaponController : MonoBehaviour
 {
-    [Header("Weapon Stats")]
-    public WeaponScriptableObject weaponData;
-    private float currentCooldown;
-    protected PlayerMovement pm;
-    
+    [Header("Weapon ScriptableObject")]
+    public WeaponScriptableObject WeaponData;
+
+    private float _currentCooldown;
+    private CompositeDisposable _disposable;
+    protected PlayerMovement _playerMovement;
+
     protected virtual void Start()
     {
-        pm = FindObjectOfType<PlayerMovement>();
-        currentCooldown = weaponData.CooldownDuration; // At the start set the current cooldown to be the cooldown duration
+        _playerMovement = FindObjectOfType<PlayerMovement>();
+        _currentCooldown = WeaponData.CooldownDuration;
+        
+        Observable.Timer(TimeSpan.FromSeconds(_currentCooldown))
+            .Repeat()
+            .Subscribe(_ =>
+            {
+                {
+                    Attack();
+                }
+            }).AddTo(_disposable);
     }
 
-    protected virtual void Update()
+    private void OnEnable()
     {
-        currentCooldown -= Time.deltaTime;
-        if (currentCooldown <= 0f) //Once the cooldown becomes 0, attack
-        {
-            Attack();
-        }
+        _disposable = new CompositeDisposable();
+    }
+
+    private void OnDisable()
+    {
+        _disposable?.Clear();
     }
 
     protected virtual void Attack()
     {
-        currentCooldown = weaponData.CooldownDuration;
+        
     }
 }
-

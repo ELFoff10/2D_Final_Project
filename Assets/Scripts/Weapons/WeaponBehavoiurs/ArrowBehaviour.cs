@@ -9,6 +9,6 @@ public class ArrowBehaviour : ProjectileWeaponBehaviour
 
     private void Update()
     {
-        transform.position += direction * currentSpeed * Time.deltaTime; 
+        transform.position += Direction * (currentSpeed * Time.deltaTime); 
     }
 }

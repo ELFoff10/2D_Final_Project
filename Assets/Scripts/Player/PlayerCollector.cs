@@ -2,34 +2,33 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class PlayerCollector : MonoBehaviour
 {
-    private PlayerStats player;
-    private CircleCollider2D playerCollector;
-    public float pullSpeed;
+    [SerializeField] private float _pullSpeed;
+    private PlayerStats _player;
+    private CircleCollider2D _playerCollector;
 
     private void Start()
     {
-        player = FindObjectOfType<PlayerStats>();
-        playerCollector = GetComponent<CircleCollider2D>();
+        _player = FindObjectOfType<PlayerStats>();
+        _playerCollector = GetComponent<CircleCollider2D>();
     }
 
     private void Update()
     {
-        playerCollector.radius = player.currentMagnet;
+        _playerCollector.radius = _player.CurrentMagnet;
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+        if (!other.gameObject.TryGetComponent(out ICollectible collectible)) return;
         
-        if (other.gameObject.TryGetComponent(out ICollectible collectible))
-        {
-            Rigidbody2D rigidbody2D = other.gameObject.GetComponent<Rigidbody2D>();
-            Vector2 forceDirection = (transform.position - other.transform.position).normalized;
-            rigidbody2D.AddForce(forceDirection * pullSpeed);
+        var component = other.gameObject.GetComponent<Rigidbody2D>();
+        Vector2 forceDirection = (transform.position - other.transform.position).normalized;
+        component.AddForce(forceDirection * _pullSpeed);
             
-            collectible.Collect();
-        }
+        collectible.Collect();
     }
 }

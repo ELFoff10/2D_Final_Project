@@ -1,7 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 [CreateAssetMenu(fileName = "WeaponScriptableObject", menuName = "ScriptableObject/Weapon")]
 public class WeaponScriptableObject : ScriptableObject
@@ -9,7 +6,6 @@ public class WeaponScriptableObject : ScriptableObject
     [SerializeField] 
     private GameObject _prefab;
     public GameObject Prefab { get => _prefab; private set => _prefab = value; }
-    // Base stats for weapons
     [SerializeField] 
     private float _damage;
     public float Damage { get => _damage; private set => _damage = value; }
@@ -22,4 +18,13 @@ public class WeaponScriptableObject : ScriptableObject
     [SerializeField] 
     private int _pierce;
     public int Pierce { get => _pierce; private set => _pierce = value; }
+    [SerializeField] 
+    private int _level;
+    public int Level { get => _level; private set => _level = value; }
+    [SerializeField] 
+    private GameObject _nextLevelPrefab;
+    public GameObject NextLevelPrefab { get => _nextLevelPrefab; private set => _nextLevelPrefab = value; }
+    [SerializeField] 
+    private Sprite _icon;
+    public Sprite Icon { get => _icon; private set => _icon = value; }
 }

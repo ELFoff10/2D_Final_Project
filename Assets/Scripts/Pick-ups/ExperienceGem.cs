@@ -1,12 +1,10 @@
-using UnityEngine;
-
 public class ExperienceGem : Pickup, ICollectible
 {
-    public int experienceGranted;
+    public int ExperienceGranted;
     
     public void Collect()
     {
-        PlayerStats playerStats = FindObjectOfType<PlayerStats>();
-        playerStats.IncreaseExperience(experienceGranted);
+        var playerStats = FindObjectOfType<PlayerStats>();
+        playerStats.IncreaseExperience(ExperienceGranted);
     }
 }

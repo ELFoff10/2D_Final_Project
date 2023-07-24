@@ -1,19 +1,15 @@
 using UnityEngine;
-using UnityEngine.Serialization;
 
 public class PlayerMovement : MonoBehaviour
 {
-    // Movement
-    [HideInInspector] 
-    public float lastHorizontalVector;
-    [HideInInspector] 
-    public float lastVerticalVector;
-    [HideInInspector] 
-    public Vector2 moveDir;
-    [HideInInspector] 
-    public Vector2 lastMovedVector;
-    
-    // References
+    [SerializeField]
+    private DynamicJoystick _dynamicJoystick;
+
+    public float LastHorizontalVector { get; private set; }
+    public float LastVerticalVector { get; private set; }
+    public Vector2 MoveDir { get; private set; }
+    public Vector2 LastMovedVector { get; private set; }
+
     private Rigidbody2D _rigidbody2D;
     private PlayerStats _player;
 
@@ -21,14 +17,14 @@ public class PlayerMovement : MonoBehaviour
     {
         _player = GetComponent<PlayerStats>();
         _rigidbody2D = GetComponent<Rigidbody2D>();
-        lastMovedVector = new Vector2(1, 0f); // If we don't this and game starts up and the player doesn't move, the projectile weapon will have no momemtum
+        LastMovedVector = new Vector2(1, 0f);
     }
-    
+
     private void Update()
     {
         InputManagement();
     }
-    
+
     private void FixedUpdate()
     {
         Move();
@@ -36,31 +32,42 @@ public class PlayerMovement : MonoBehaviour
 
     private void InputManagement()
     {
-        var moveX = Input.GetAxisRaw("Horizontal");
-        var moveY = Input.GetAxisRaw("Vertical");
-
-        moveDir = new Vector2(moveX, moveY).normalized;
-
-        if (moveDir.x != 0)
+        if (GameManager.Instance.IsGameOver)
         {
-            lastHorizontalVector = moveDir.x;
-            lastMovedVector = new Vector2(lastHorizontalVector, 0f); // Last moved X
+            return;
+        }
+        
+        var moveX = _dynamicJoystick.Horizontal;
+        var moveY = _dynamicJoystick.Vertical;
+
+        MoveDir = new Vector2(moveX, moveY).normalized;
+
+        if (MoveDir.x != 0)
+        {
+            LastHorizontalVector = MoveDir.x;
+            LastMovedVector = new Vector2(LastHorizontalVector, 0f);
         }
 
-        if (moveDir.y != 0)
+        if (MoveDir.y != 0)
         {
-            lastVerticalVector = moveDir.y;
-            lastMovedVector = new Vector2(0f, lastVerticalVector); // Last moved Y
+            LastVerticalVector = MoveDir.y;
+            LastMovedVector = new Vector2(0f, LastVerticalVector);
         }
 
-        if (moveDir.x != 0 && moveDir.y != 0)
+        if (MoveDir.x != 0 && MoveDir.y != 0)
         {
-            lastMovedVector = new Vector2(lastHorizontalVector, lastVerticalVector);
+            LastMovedVector = new Vector2(LastHorizontalVector, LastVerticalVector);
         }
     }
 
     private void Move()
     {
-        _rigidbody2D.velocity = new Vector2(moveDir.x * _player._currentMoveSpeed, moveDir.y * _player._currentMoveSpeed);
+        if (GameManager.Instance.IsGameOver)
+        {
+            return;
+        }
+        
+        _rigidbody2D.velocity =
+            new Vector2(MoveDir.x * _player.CurrentMoveSpeed, MoveDir.y * _player.CurrentMoveSpeed);
     }
 }

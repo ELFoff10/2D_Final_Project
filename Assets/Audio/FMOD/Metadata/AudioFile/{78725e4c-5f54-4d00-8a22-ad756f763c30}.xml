@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{78725e4c-5f54-4d00-8a22-ad756f763c30}">
+		<property name="assetPath">
+			<value>PressKey.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>22.0499992</value>
+		</property>
+		<property name="channelCount">
+			<value>1</value>
+		</property>
+		<property name="length">
+			<value>0.21111111111111111</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{bdac8d34-933c-4d02-a5b6-becb310c0a1c}</destination>
+		</relationship>
+	</object>
+</objects>
