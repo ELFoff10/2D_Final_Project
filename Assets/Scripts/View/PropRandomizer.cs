@@ -5,8 +5,8 @@ using Random = UnityEngine.Random;
 
 public class PropRandomizer : MonoBehaviour
 {
-    [SerializeField] private List<GameObject> _propSpawnPoints;
-    [SerializeField] private List<GameObject> _propPrefabs;
+    public List<GameObject> _propSpawnPoints;
+    public List<GameObject> _propPrefabs;
 
     private void Start()
     {

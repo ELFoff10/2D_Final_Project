@@ -20,5 +20,5 @@ MonoBehaviour:
   _moveSpeed: 5
   _might: 1
   _projectileSpeed: 3
-  _magnet: 2
+  _magnet: 10
   _animator: {fileID: 9100000, guid: ee414b29384db3a4a97c51540235795b, type: 2}
