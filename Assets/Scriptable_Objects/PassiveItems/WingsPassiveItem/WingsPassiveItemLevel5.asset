@@ -15,4 +15,6 @@ MonoBehaviour:
   _multiplier: 150
   _level: 5
   _nextLevelPrefab: {fileID: 4398688579983075881, guid: e3bf48bee7198e14ba4242f21f9e6d23, type: 3}
+  _name: Wings Level 5
+  _description: Increases Movemeny Speed by 150%
   _icon: {fileID: 21300000, guid: ee40d72ece864764f9d17d015aedb524, type: 3}

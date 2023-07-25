@@ -15,4 +15,6 @@ MonoBehaviour:
   _multiplier: 75
   _level: 2
   _nextLevelPrefab: {fileID: 4398688579983075881, guid: 7890855979e600c40a5b7454f0252cee, type: 3}
+  _name: Wings Level 2
+  _description: Increases Movemeny Speed by 75%
   _icon: {fileID: 21300000, guid: ee40d72ece864764f9d17d015aedb524, type: 3}

@@ -19,4 +19,6 @@ MonoBehaviour:
   _pierce: 6
   _level: 6
   _nextLevelPrefab: {fileID: 0}
+  _name: Bow Level 6
+  _description: Damage + 5, Speed + 40, Pierce +1, Cooldown -0.1
   _icon: {fileID: 21300000, guid: 5d7061fc7da05ce44add317708ec7215, type: 3}

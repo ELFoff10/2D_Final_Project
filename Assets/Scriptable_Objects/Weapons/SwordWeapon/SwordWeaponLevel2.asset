@@ -19,4 +19,6 @@ MonoBehaviour:
   _pierce: 0
   _level: 2
   _nextLevelPrefab: {fileID: 81333858121102419, guid: 50e9cf6a963e50e4a93ca66c4dd1b4b3, type: 3}
+  _name: Sword Level 2
+  _description: Cooldown reduced by 0.2, Damage +5
   _icon: {fileID: 21300000, guid: 5fd50594014b70e48bd6993443d46b32, type: 3}

@@ -51,6 +51,8 @@ public class GameManager : MonoSingleton<GameManager>
 
     public bool ChoosingUpgrade;
 
+    public GameObject PlayerObject;
+
     private void Start()
     {
         DisableScreens();
@@ -216,6 +218,7 @@ public class GameManager : MonoSingleton<GameManager>
     public void StartLevelUp()
     {
         ChangeState(GameState.LevelUp);
+        PlayerObject.SendMessage("RemoveAndApplyUpgrades");
     }
     
     public void EndLevelUp()

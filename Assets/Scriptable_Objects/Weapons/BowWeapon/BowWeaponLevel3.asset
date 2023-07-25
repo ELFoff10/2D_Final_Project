@@ -19,4 +19,6 @@ MonoBehaviour:
   _pierce: 3
   _level: 3
   _nextLevelPrefab: {fileID: 7216345248615862975, guid: f8181f0c423020f4ea7e1dc4bdf48ce2, type: 3}
+  _name: Bow Level 3
+  _description: Damage + 5, Speed + 5, Pierce +1, Cooldown -0.1
   _icon: {fileID: 21300000, guid: 5d7061fc7da05ce44add317708ec7215, type: 3}

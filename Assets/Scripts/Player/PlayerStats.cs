@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class PlayerStats : MonoBehaviour
@@ -132,6 +133,10 @@ public class PlayerStats : MonoBehaviour
     public int WeaponIndex;
     public int PassiveItemIndex;
 
+    public GameObject FirstWeaponTest;
+    public GameObject FirstPassiveItemTest;
+    public GameObject SecondPassiveItemTest;
+
     private void Awake()
     {
         if (CharacterSelector.Instance != null)
@@ -150,16 +155,22 @@ public class PlayerStats : MonoBehaviour
         CurrentProjectileSpeed = CharacterData.ProjectileSpeed;
         CurrentMagnet = CharacterData.Magnet;
         _currentAnimator.runtimeAnimatorController = CharacterData.Animator;
-        SpawnWeapon(CharacterData.StartingWeapon);
         
+        // GameManager.Instance.AssignChosenCharacterUI(CharacterData);
+        
+        SpawnWeapon(CharacterData.StartingWeapon);
+        // SpawnPassiveItem(FirstPassiveItemTest);
+        SpawnPassiveItem(SecondPassiveItemTest);
+    }
+
+    private void Start()
+    {
         GameManager.Instance.CurrentHealthText.text = "Health:" + _currentHealth;
         GameManager.Instance.CurrentRecoveryText.text = "Recovery: " + _currentRecovery;
         GameManager.Instance.CurrentMoveSpeedText.text = "Move Speed: " + _currentMoveSpeed;
         GameManager.Instance.CurrentMightText.text = "Might: " + _currentMight;
         GameManager.Instance.CurrentProjectileSpeedText.text = "Projectile Speed: " + _currentProjectileSpeed;
         GameManager.Instance.CurrentMagnetText.text = "Magnet: " + _currentMagnet;
-        
-        GameManager.Instance.AssignChosenCharacterUI(CharacterData);
     }
 
     private void Update()
