@@ -203,7 +203,7 @@ public class GameManager : MonoSingleton<GameManager>
 
         if (_stopwatchTime >= TimeLimit)
         {
-            GameOver();;
+            PlayerObject.SendMessage("Kill");
         }
     }
 

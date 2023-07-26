@@ -1,8 +1,17 @@
-public class HealthPotion : Pickup, ICollectible
+public class HealthPotion : Pickup
 {
     public int HealthToRestore;
-    public void Collect()
+    public override void Collect()
     {
+        if (HasBeenCollected)
+        {
+            return;
+        }
+        else
+        {
+            base.Collect();
+        }
+        
         var player = FindObjectOfType<PlayerStats>();
         player.RestoreHealth(HealthToRestore);
     }

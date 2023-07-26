@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c89538c2d3c4134896db4d75616b5fa, type: 3}
   m_Name: BowWeaponLevel6
   m_EditorClassIdentifier: 
-  _prefab: {fileID: 4904390151531246391, guid: 1252dee9daed07649a1c70c14d79adfa, type: 3}
+  _prefab: {fileID: 4904390151531246391, guid: 8b7632b84628bb84d9eb07d848d911e6, type: 3}
   _damage: 30
   _speed: 80
   _cooldownDuration: 0.5

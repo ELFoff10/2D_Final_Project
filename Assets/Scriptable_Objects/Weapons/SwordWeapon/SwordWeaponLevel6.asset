@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c89538c2d3c4134896db4d75616b5fa, type: 3}
   m_Name: SwordWeaponLevel6
   m_EditorClassIdentifier: 
-  _prefab: {fileID: 6565967707378730063, guid: 35a9d66ac0bfb97458de7943a949f3a5, type: 3}
+  _prefab: {fileID: 6565967707378730063, guid: e698c3451ef741d47bbe17dd9c290219, type: 3}
   _damage: 50
   _speed: 0
   _cooldownDuration: 1
