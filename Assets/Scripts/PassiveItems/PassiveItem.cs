@@ -2,17 +2,17 @@ using UnityEngine;
 
 public class PassiveItem : MonoBehaviour
 {
-    protected PlayerStats _playerStats;
-    public PassiveItemScriptableObject PassiveItemData;
+	protected PlayerStats PlayerStats;
+	public PassiveItemScriptableObject PassiveItemData;
 
-    protected virtual void ApplyModifier()
-    {
-        // Apply the boost value to the appropriate stat in the child classes
-    }
+	protected virtual void ApplyModifier()
+	{
+		// Apply the boost value to the appropriate stat in the child classes
+	}
 
-    private void Start()
-    {
-        _playerStats = FindObjectOfType<PlayerStats>();
-        ApplyModifier();
-    }
+	private void Start()
+	{
+		PlayerStats = FindObjectOfType<PlayerStats>();
+		ApplyModifier();
+	}
 }

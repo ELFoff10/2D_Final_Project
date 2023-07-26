@@ -76,7 +76,7 @@ public class InventoryManager : MonoBehaviour
 		}
 	}
 
-	public void LevelUpWeapon(int slotIndex, int upgradeIndex)
+	private void LevelUpWeapon(int slotIndex, int upgradeIndex)
 	{
 		if (WeaponSlots.Count > slotIndex)
 		{
@@ -101,7 +101,7 @@ public class InventoryManager : MonoBehaviour
 		}
 	}
 
-	public void LevelUpPassiveItem(int slotIndex, int upgradeIndex)
+	private void LevelUpPassiveItem(int slotIndex, int upgradeIndex)
 	{
 		if (PassiveItemSlots.Count > slotIndex)
 		{
@@ -157,12 +157,12 @@ public class InventoryManager : MonoBehaviour
 
 			if (upgradeType == 1)
 			{
-				WeaponUpgrade choseenWeaponUpgrade =
+				WeaponUpgrade chosenWeaponUpgrade =
 					availableWeaponUpgrades[Random.Range(0, availableWeaponUpgrades.Count)];
 
-				availableWeaponUpgrades.Remove(choseenWeaponUpgrade);
+				availableWeaponUpgrades.Remove(chosenWeaponUpgrade);
 
-				if (choseenWeaponUpgrade != null)
+				if (chosenWeaponUpgrade != null)
 				{
 					EnableUpgradeUI(upgradeOption);
 
@@ -170,22 +170,22 @@ public class InventoryManager : MonoBehaviour
 
 					for (int i = 0; i < WeaponSlots.Count; i++)
 					{
-						if (WeaponSlots[i] != null && WeaponSlots[i].WeaponData == choseenWeaponUpgrade.WeaponData)
+						if (WeaponSlots[i] != null && WeaponSlots[i].WeaponData == chosenWeaponUpgrade.WeaponData)
 						{
 							newWeapon = false;
 							if (!newWeapon)
 							{
-								if (!choseenWeaponUpgrade.WeaponData.NextLevelPrefab)
+								if (!chosenWeaponUpgrade.WeaponData.NextLevelPrefab)
 								{
 									DisableUpgradeUI(upgradeOption);
 									break;
 								}
 
 								upgradeOption.UpgradeButton.onClick.AddListener(() =>
-									LevelUpWeapon(i, choseenWeaponUpgrade.WeaponUpgradeIndex));
-								upgradeOption.UpgradeDescriptionDisplay.text = choseenWeaponUpgrade.WeaponData
+									LevelUpWeapon(i, chosenWeaponUpgrade.WeaponUpgradeIndex));
+								upgradeOption.UpgradeDescriptionDisplay.text = chosenWeaponUpgrade.WeaponData
 									.NextLevelPrefab.GetComponent<WeaponController>().WeaponData.Description;
-								upgradeOption.UpgradeNameDisplay.text = choseenWeaponUpgrade.WeaponData.NextLevelPrefab
+								upgradeOption.UpgradeNameDisplay.text = chosenWeaponUpgrade.WeaponData.NextLevelPrefab
 									.GetComponent<WeaponController>().WeaponData.Name;
 							}
 
@@ -197,15 +197,15 @@ public class InventoryManager : MonoBehaviour
 						}
 					}
 
-					if (newWeapon) // Spawn a new weapon
+					if (newWeapon)
 					{
 						upgradeOption.UpgradeButton.onClick.AddListener(() =>
-							_player.SpawnWeapon(choseenWeaponUpgrade.InitialWeapon));
-						upgradeOption.UpgradeDescriptionDisplay.text = choseenWeaponUpgrade.WeaponData.Description;
-						upgradeOption.UpgradeNameDisplay.text = choseenWeaponUpgrade.WeaponData.Name;
+							_player.SpawnWeapon(chosenWeaponUpgrade.InitialWeapon));
+						upgradeOption.UpgradeDescriptionDisplay.text = chosenWeaponUpgrade.WeaponData.Description;
+						upgradeOption.UpgradeNameDisplay.text = chosenWeaponUpgrade.WeaponData.Name;
 					}
 
-					upgradeOption.UpgradeIcon.sprite = choseenWeaponUpgrade.WeaponData.Icon;
+					upgradeOption.UpgradeIcon.sprite = chosenWeaponUpgrade.WeaponData.Icon;
 				}
 			}
 			else if (upgradeType == 2)

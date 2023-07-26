@@ -5,109 +5,109 @@ using UnityEngine;
 /// </summary>
 public class ProjectileWeaponBehaviour : MonoBehaviour
 {
-    [SerializeField] private float _destroyAfterSeconds;
-    public WeaponScriptableObject weaponData;
+	[SerializeField]
+	private float _destroyAfterSeconds;
+	public WeaponScriptableObject WeaponData;
 
-    protected Vector3 Direction;
+	protected Vector3 Direction;
 
-    protected float currentDamage;
-    protected float currentSpeed;
-    protected float currentCooldownDuration;
-    protected int currentPierce;
+	protected float CurrentDamage;
+	protected float CurrentSpeed;
+	protected float CurrentCooldownDuration;
+	protected int CurrentPierce;
 
-    private void Awake()
-    {
-        currentDamage = weaponData.Damage;
-        currentSpeed = weaponData.Speed;
-        currentCooldownDuration = weaponData.CooldownDuration;
-        currentPierce = weaponData.Pierce;
-    }
+	private void Awake()
+	{
+		CurrentDamage = WeaponData.Damage;
+		CurrentSpeed = WeaponData.Speed;
+		CurrentCooldownDuration = WeaponData.CooldownDuration;
+		CurrentPierce = WeaponData.Pierce;
+	}
 
-    protected virtual void Start()
-    {
-        Destroy(gameObject, _destroyAfterSeconds);
-    }
+	protected virtual void Start()
+	{
+		Destroy(gameObject, _destroyAfterSeconds);
+	}
 
-    protected virtual void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.CompareTag("Enemy"))
-        {
-            var enemy = other.GetComponent<EnemyStats>();
-            enemy.TakeDamage(GetCurrentDamage());
-            ReducePierce();
-        }
-        else if(other.CompareTag("Prop"))
-        {
-            if (!other.gameObject.TryGetComponent(out BreakableProps breakable)) return;
-            
-            breakable.TakeDamage(GetCurrentDamage());
-            ReducePierce();
-        }
-    }
+	protected virtual void OnTriggerEnter2D(Collider2D other)
+	{
+		if (other.CompareTag("Enemy"))
+		{
+			var enemy = other.GetComponent<EnemyStats>();
+			enemy.TakeDamage(GetCurrentDamage());
+			ReducePierce();
+		}
+		else if (other.CompareTag("Prop"))
+		{
+			if (!other.gameObject.TryGetComponent(out BreakableProps breakable)) return;
 
-    public float GetCurrentDamage()
-    {
-        return currentDamage *= FindObjectOfType<PlayerStats>().CurrentMight;
-    }
+			breakable.TakeDamage(GetCurrentDamage());
+			ReducePierce();
+		}
+	}
 
-    public void DirectionChecker(Vector3 dir)
-    {
-        Direction = dir;
+	public float GetCurrentDamage()
+	{
+		return CurrentDamage *= FindObjectOfType<PlayerStats>().CurrentMight;
+	}
 
-        var dirX = Direction.x;
-        var dirY = Direction.y;
+	public void DirectionChecker(Vector3 dir)
+	{
+		Direction = dir;
 
-        var scale = transform.localScale;
-        var rotation = transform.rotation.eulerAngles;
+		var dirX = Direction.x;
+		var dirY = Direction.y;
 
-        switch (dirX)
-        {
-            // left
-            case < 0 when dirY == 0:
-                scale.x = scale.x * -1;
-                scale.y = scale.y * -1;
-                break;
-            // down
-            case 0 when dirY < 0:
-                rotation.z = -90f;
-                break;
-            // up
-            case 0 when dirY > 0:
-                rotation.z = 90f;
-                break;
-            // right up
-            case > 0 when dirY > 0:
-                rotation.z = 45f;
-                break;
-            // right down
-            case > 0 when dirY < 0:
-                rotation.z = -45f;
-                break;
-            // left up
-            case < 0 when dirY > 0:
-                scale.x = scale.x * -1;
-                scale.y = scale.y * -1;
-                rotation.z = -45f;
-                break;
-            // left down
-            case < 0 when dirY < 0:
-                scale.x = scale.x * -1;
-                scale.y = scale.y * -1;
-                rotation.z = 45f;
-                break;
-        }
+		var scale = transform.localScale;
+		var rotation = transform.rotation.eulerAngles;
 
-        transform.localScale = scale;
-        transform.rotation = Quaternion.Euler(rotation);
-    }
+		switch (dirX)
+		{
+			// left
+			case < 0 when dirY == 0:
+				scale.x = scale.x * -1;
+				scale.y = scale.y * -1;
+				break;
+			// down
+			case 0 when dirY < 0:
+				rotation.z = -90f;
+				break;
+			// up
+			case 0 when dirY > 0:
+				rotation.z = 90f;
+				break;
+			// right up
+			case > 0 when dirY > 0:
+				rotation.z = 45f;
+				break;
+			// right down
+			case > 0 when dirY < 0:
+				rotation.z = -45f;
+				break;
+			// left up
+			case < 0 when dirY > 0:
+				scale.x = scale.x * -1;
+				scale.y = scale.y * -1;
+				rotation.z = -45f;
+				break;
+			// left down
+			case < 0 when dirY < 0:
+				scale.x = scale.x * -1;
+				scale.y = scale.y * -1;
+				rotation.z = 45f;
+				break;
+		}
 
-    private void ReducePierce()
-    {
-        currentPierce--;
-        if (currentPierce <= 0)
-        {
-            Destroy(gameObject);
-        }
-    }
+		transform.localScale = scale;
+		transform.rotation = Quaternion.Euler(rotation);
+	}
+
+	private void ReducePierce()
+	{
+		CurrentPierce--;
+		if (CurrentPierce <= 0)
+		{
+			Destroy(gameObject);
+		}
+	}
 }
-

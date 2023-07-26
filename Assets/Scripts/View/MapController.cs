@@ -13,7 +13,7 @@ public class MapController : MonoBehaviour
 
 	public List<GameObject> SpawnedChunks;
 	private GameObject _latestChunk;
-	public float MaxOpDist; // Must be greater than lenght and width of the tilemap
+	public float MaxOpDist;
 	private float _opDist;
 	private float _optimizerCooldown;
 	public float OptimizerCooldownDur;
@@ -35,40 +35,34 @@ public class MapController : MonoBehaviour
 
 		if (Mathf.Abs(direction.x) > Mathf.Abs(direction.y))
 		{
-			// Moving horizontally more than vertically
-			if (direction.y > 0.5f)
+			switch (direction.y)
 			{
-				// Also moving upwards
-				return direction.x > 0 ? "Right Up" : "Left Up";
-			}
-			else if (direction.y < -0.5f)
-			{
-				// Also moving downwards
-				return direction.x > 0 ? "Right Down" : "Left Down";
-			}
-			else
-			{
-				// Moving straight horizontally
-				return direction.x > 0 ? "Right" : "Left";
+				// Moving horizontally more than vertically
+				case > 0.5f:
+					// Also moving upwards
+					return direction.x > 0 ? "Right Up" : "Left Up";
+				case < -0.5f:
+					// Also moving downwards
+					return direction.x > 0 ? "Right Down" : "Left Down";
+				default:
+					// Moving straight horizontally
+					return direction.x > 0 ? "Right" : "Left";
 			}
 		}
 		else
 		{
-			// Moving vertically more than horizontally
-			if (direction.x > 0.5f)
+			switch (direction.x)
 			{
-				// Also moving right
-				return direction.y > 0 ? "Right Up" : "Right Down";
-			}
-			else if (direction.x < -0.5f)
-			{
-				// Also moving left
-				return direction.y > 0 ? "Left Up" : "Left Down";
-			}
-			else
-			{
-				// Moving straight vertically
-				return direction.y > 0 ? "Up" : "Down";
+				// Moving vertically more than horizontally
+				case > 0.5f:
+					// Also moving right
+					return direction.y > 0 ? "Right Up" : "Right Down";
+				case < -0.5f:
+					// Also moving left
+					return direction.y > 0 ? "Left Up" : "Left Down";
+				default:
+					// Moving straight vertically
+					return direction.y > 0 ? "Up" : "Down";
 			}
 		}
 	}
@@ -80,26 +74,30 @@ public class MapController : MonoBehaviour
 			return;
 		}
 
-		Vector3 moveDir = Player.transform.position - _playerLastPosition;
-		_playerLastPosition = Player.transform.position;
+		var position = Player.transform.position;
+		Vector3 moveDir = position - _playerLastPosition;
+		_playerLastPosition = position;
 
 		string directionName = GetDirectionName(moveDir);
-		
+
 		CheckAndSpawnChunk(directionName);
-		
+
 		// Check additional adjacent directions for diagonal chunks
 		if (directionName.Contains("Up"))
 		{
 			CheckAndSpawnChunk("Up");
 		}
+
 		if (directionName.Contains("Down"))
 		{
 			CheckAndSpawnChunk("Down");
 		}
+
 		if (directionName.Contains("Right"))
 		{
 			CheckAndSpawnChunk("Right");
 		}
+
 		if (directionName.Contains("Left"))
 		{
 			CheckAndSpawnChunk("Left");

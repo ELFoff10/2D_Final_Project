@@ -5,21 +5,21 @@ using Random = UnityEngine.Random;
 
 public class PropRandomizer : MonoBehaviour
 {
-    public List<GameObject> _propSpawnPoints;
-    public List<GameObject> _propPrefabs;
+	public List<GameObject> PropSpawnPoints;
+	public List<GameObject> PropPrefabs;
 
-    private void Start()
-    {
-        SpawnProps();
-    }
+	private void Start()
+	{
+		SpawnProps();
+	}
 
-    private void SpawnProps()
-    {
-        foreach (var propSpawnPoint in _propSpawnPoints)
-        {
-            var random = Random.Range(0, _propPrefabs.Count);
-            var prop = Instantiate(_propPrefabs[random], propSpawnPoint.transform.position, quaternion.identity);
-            prop.transform.parent = propSpawnPoint.transform;
-        }
-    }
+	private void SpawnProps()
+	{
+		foreach (var propSpawnPoint in PropSpawnPoints)
+		{
+			var random = Random.Range(0, PropPrefabs.Count);
+			var prop = Instantiate(PropPrefabs[random], propSpawnPoint.transform.position, quaternion.identity);
+			prop.transform.parent = propSpawnPoint.transform;
+		}
+	}
 }

@@ -2,13 +2,13 @@ using UnityEngine;
 
 public class BreakableProps : MonoBehaviour
 {
-    public float health;
+    public float Health;
 
     public void TakeDamage(float damage)
     {
-        health -= damage;
+        Health -= damage;
 
-        if (health <= 0)
+        if (Health <= 0)
         {
             Kill();
         }

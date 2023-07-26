@@ -1,4 +1,3 @@
-using UnityEditor.Animations;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "CharacterScriptableObject", menuName = "ScriptableObject/Character")]
@@ -31,7 +30,4 @@ public class CharacterScriptableObject : ScriptableObject
     [SerializeField]
     private float _magnet;
     public float Magnet { get => _magnet; private set => _magnet = value; }
-    [SerializeField]
-    private AnimatorController _animator;
-    public AnimatorController Animator { get => _animator; private set => _animator = value; }
 }

@@ -18,7 +18,6 @@ public class DropRateManager : MonoBehaviour
 
     private void OnDestroy()
     {
-        // Spotps the spawning error from appearing when stopping play mode
         if (!gameObject.scene.isLoaded)
         {
             return;

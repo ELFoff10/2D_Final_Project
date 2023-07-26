@@ -10,6 +10,6 @@ public class ArrowController : WeaponController
         base.Attack();
         var spawnedArrow = Instantiate(WeaponData.Prefab);
         spawnedArrow.transform.position = transform.position; 
-        spawnedArrow.GetComponent<ArrowBehaviour>().DirectionChecker(_playerMovement.LastMovedVector);
+        spawnedArrow.GetComponent<ArrowBehaviour>().DirectionChecker(PlayerMovement.LastMovedVector);
     }
 }

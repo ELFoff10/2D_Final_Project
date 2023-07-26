@@ -20,7 +20,6 @@ public class PlayerStats : MonoBehaviour
 		get => _currentHealth;
 		set
 		{
-			// Check if the value has changed
 			if (_currentHealth != value)
 			{
 				_currentHealth = value;
@@ -28,7 +27,6 @@ public class PlayerStats : MonoBehaviour
 				{
 					GameManager.Instance.CurrentHealthText.text = "Health: " + _currentHealth;
 				}
-				// Add any additional logic here that needs to be executed when the value changes
 			}
 		}
 	}
@@ -135,10 +133,6 @@ public class PlayerStats : MonoBehaviour
 	public int WeaponIndex;
 	public int PassiveItemIndex;
 
-	public GameObject FirstWeaponTest;
-	public GameObject FirstPassiveItemTest;
-	public GameObject SecondPassiveItemTest;
-
 	[Header("UI")]
 	public Image HealthBar;
 	public Image ExperienceBar;
@@ -162,11 +156,8 @@ public class PlayerStats : MonoBehaviour
 		CurrentMight = CharacterData.Might;
 		CurrentProjectileSpeed = CharacterData.ProjectileSpeed;
 		CurrentMagnet = CharacterData.Magnet;
-		_currentAnimator.runtimeAnimatorController = CharacterData.Animator;
 
 		SpawnWeapon(CharacterData.StartingWeapon);
-		// SpawnPassiveItem(FirstPassiveItemTest);
-		SpawnPassiveItem(SecondPassiveItemTest);
 	}
 
 	private void Start()
@@ -191,7 +182,7 @@ public class PlayerStats : MonoBehaviour
 		{
 			_invincibilityTimer -= Time.deltaTime;
 		}
-		// If the invinvibility timer has reached 0, set the invincibility flag to false
+
 		else if (_isInvincible)
 		{
 			_isInvincible = false;
@@ -228,7 +219,7 @@ public class PlayerStats : MonoBehaviour
 
 	private void UpdateLevelText()
 	{
-		LevelText.text = "Level " + Level.ToString();
+		LevelText.text = "LEVEL: " + Level.ToString();
 	}
 
 	public void TakeDamage(float damage)
@@ -255,13 +246,12 @@ public class PlayerStats : MonoBehaviour
 
 	private void Kill()
 	{
-		if (!GameManager.Instance.IsGameOver)
-		{
-			GameManager.Instance.AssignLevelReachedUI(Level);
-			GameManager.Instance.AssignChosenWeaponsAndPassiveItemsUI(_inventory.WeaponUiSlots,
-				_inventory.PassiveItemUiSlots);
-			GameManager.Instance.GameOver();
-		}
+		if (GameManager.Instance.IsGameOver)
+			return;
+		GameManager.Instance.AssignLevelReachedUI(Level);
+		GameManager.Instance.AssignChosenWeaponsAndPassiveItemsUI(_inventory.WeaponUiSlots,
+			_inventory.PassiveItemUiSlots);
+		GameManager.Instance.GameOver();
 	}
 
 	public void RestoreHealth(float amount)
@@ -277,7 +267,7 @@ public class PlayerStats : MonoBehaviour
 		}
 	}
 
-	void Recover()
+	private void Recover()
 	{
 		if (CurrentHealth < CharacterData.MaxHealth)
 		{

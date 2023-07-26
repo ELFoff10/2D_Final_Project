@@ -93,7 +93,7 @@ public class EnemySpawner : MonoBehaviour
 					enemyGroup.SpawnCount++;
 					Waves[CurrentWaveCount].SpawnCount++;
 					EnemiesAlive++;
-					
+
 					if (EnemiesAlive >= MaxEnemiesAllowed)
 					{
 						MaxEnemiesReached = true;
@@ -107,7 +107,7 @@ public class EnemySpawner : MonoBehaviour
 	public void OnEnemyKilled()
 	{
 		EnemiesAlive--;
-		
+
 		// Reset the maxEnemiesReached flag if the number of enemies alive dropped below the maximum amount
 		if (EnemiesAlive < MaxEnemiesAllowed)
 		{
