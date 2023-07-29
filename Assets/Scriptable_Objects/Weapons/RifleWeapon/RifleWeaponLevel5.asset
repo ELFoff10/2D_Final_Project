@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c89538c2d3c4134896db4d75616b5fa, type: 3}
+  m_Name: RifleWeaponLevel5
+  m_EditorClassIdentifier: 
+  _prefab: {fileID: 4904390151531246391, guid: 887e62f19cf794043879e907aa312b3e, type: 3}
+  _damage: 25
+  _speed: 40
+  _cooldownDuration: 0.6
+  _pierce: 5
+  _level: 5
+  _nextLevelPrefab: {fileID: 7216345248615862975, guid: bb3805b1bb0ff1146bc7e3bc5b8ba69f, type: 3}
+  _name: Rifle Level 5
+  _description: Damage + 5, Speed + 5, Pierce +1, Cooldown -0.1
+  _icon: {fileID: 8333481726314500824, guid: 4061cbb0b10e4a968c871e05441cc087, type: 3}

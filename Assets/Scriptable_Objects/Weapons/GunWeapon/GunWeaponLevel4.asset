@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c89538c2d3c4134896db4d75616b5fa, type: 3}
+  m_Name: GunWeaponLevel4
+  m_EditorClassIdentifier: 
+  _prefab: {fileID: 4904390151531246391, guid: 861bedda873e753419259da67a507401, type: 3}
+  _damage: 20
+  _speed: 35
+  _cooldownDuration: 0.7
+  _pierce: 4
+  _level: 4
+  _nextLevelPrefab: {fileID: 7216345248615862975, guid: c810946d48be8c048ba045799320f3a9, type: 3}
+  _name: Gun Level 4
+  _description: Damage + 5, Speed + 5, Pierce +1, Cooldown -0.1
+  _icon: {fileID: -6628414004274166170, guid: 975b044790644f9f9bd4c0be5f8c4b5a, type: 3}

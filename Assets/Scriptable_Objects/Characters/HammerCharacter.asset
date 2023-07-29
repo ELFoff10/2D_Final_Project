@@ -14,11 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _icon: {fileID: 4301844918096825189, guid: 0d5ba4ee83da4f6cb095eef2d5946ba2, type: 3}
   _name: Hammer
-  _startingWeapon: {fileID: 81333858121102419, guid: 7fc95dbe7a9d6a3469a8636bbd65996c, type: 3}
+  _startingWeapon: {fileID: 81333858121102419, guid: 32d7c77454e4dae4a827173b87939d0c, type: 3}
   _maxHealth: 150
   _recovery: 1
   _moveSpeed: 3
   _might: 1
   _projectileSpeed: 0
   _magnet: 25
-  _animator: {fileID: 9100000, guid: 7481380437d8cb64cacb2ac7740100bf, type: 2}

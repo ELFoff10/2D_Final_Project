@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c89538c2d3c4134896db4d75616b5fa, type: 3}
+  m_Name: SyctheWeaponLevel2
+  m_EditorClassIdentifier: 
+  _prefab: {fileID: 6565967707378730063, guid: 160e7db20c0a6ac46a5bd9e81593aa49, type: 3}
+  _damage: 15
+  _speed: 0
+  _cooldownDuration: 1.8
+  _pierce: 0
+  _level: 2
+  _nextLevelPrefab: {fileID: 81333858121102419, guid: a0d8bffbd20f3e24f8da5b99d4f6cc97, type: 3}
+  _name: Sycthe Level 2
+  _description: Cooldown reduced by 0.2, Damage +5
+  _icon: {fileID: -3550559474533410453, guid: 132b17b65be64a26a2e11fce59e2ec9a, type: 3}
