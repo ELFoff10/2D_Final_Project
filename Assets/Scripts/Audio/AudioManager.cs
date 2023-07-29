@@ -1,24 +1,59 @@
-using FMODUnity;
-using System.Collections;
 using System.Collections.Generic;
+using FMOD.Studio;
+using FMODUnity;
 using UnityEngine;
 
-public class AudioManager : MonoBehaviour
+public class AudioManager : MonoSingleton<AudioManager>
 {
+	[SerializeField]
+	private FMOD_Events _fmodEvents;
+
+	public List<EventInstance> EventInstances;
+
+	protected override void Awake()
+	{
+		base.Awake();
+		EventInstances = new List<EventInstance>();
+		CreateInstance(_fmodEvents.ClickButton);
+		CreateInstance(_fmodEvents.MenuBackgroundMusic);
+		CreateInstance(_fmodEvents.GameBackgroundMusic);
+		CreateInstance(_fmodEvents.PauseBackgroundMusic);
+	}
+
 	public void PlayOneShot(EventReference sound)
 	{
 		RuntimeManager.PlayOneShot(sound);
 	}
 
-	public static AudioManager Instance { get; private set; }
-
-	private void Awake()
+	public void PlayButtonClick()
 	{
-		if (Instance != null)
-		{
-			Debug.Log("Found double FMOD_Events on the scene");
-		}
+		PlayOneShot(_fmodEvents.ClickButton);
+	}
 
-		Instance = this;
+	public void MenuBackgroundMusicStart()
+	{
+		EventInstances[1].start();
+	}
+	
+	public void MenuBackgroundMusicStop()
+	{
+		EventInstances[1].stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+	}
+	
+	public void GameBackgroundMusicStart()
+	{
+		EventInstances[2].start();
+	}
+	
+	public void GameBackgroundMusicStop()
+	{
+		EventInstances[2].stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+	}
+
+	private EventInstance CreateInstance(EventReference eventReference)
+	{
+		var eventInstance = RuntimeManager.CreateInstance(eventReference);
+		EventInstances.Add(eventInstance);
+		return eventInstance;
 	}
 }

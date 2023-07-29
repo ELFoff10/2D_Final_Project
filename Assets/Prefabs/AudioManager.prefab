@@ -1,0 +1,89 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3150049575771436566
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7012841422376021165}
+  - component: {fileID: 2868432085704347612}
+  - component: {fileID: 59950121313619089}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7012841422376021165
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3150049575771436566}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2868432085704347612
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3150049575771436566}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a175a4c666450e409d2361eb384447a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _doNotDestroyOnLoad: 0
+  _fmodEvents: {fileID: 59950121313619089}
+--- !u!114 &59950121313619089
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3150049575771436566}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39a0161db9daa9d4fb5ebd3404c9260f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <ClickButton>k__BackingField:
+    Guid:
+      Data1: -1244298469
+      Data2: 1114195512
+      Data3: -539645285
+      Data4: -2044707740
+    Path: event:/UI/PressKey
+  <MenuBackgroundMusic>k__BackingField:
+    Guid:
+      Data1: -204103827
+      Data2: 1325839144
+      Data3: 746930578
+      Data4: -746135149
+    Path: event:/UI/MenuMusic
+  <GameBackgroundMusic>k__BackingField:
+    Guid:
+      Data1: 1728691547
+      Data2: 1209316055
+      Data3: -1827902283
+      Data4: 1585662167
+    Path: event:/BackgroundMusic/Level1Music
+  <PauseBackgroundMusic>k__BackingField:
+    Guid:
+      Data1: 1300193124
+      Data2: 1335860416
+      Data3: 2027350415
+      Data4: 535051429
+    Path: event:/BackgroundMusic/PauseMusic

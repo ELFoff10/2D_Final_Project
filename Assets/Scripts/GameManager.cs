@@ -52,6 +52,12 @@ public class GameManager : MonoSingleton<GameManager>
 
 	public GameObject PlayerObject;
 
+	protected override void Awake()
+	{
+		base.Awake();
+		AudioManager.Instance.EventInstances[2].start();
+	}
+
 	private void Start()
 	{
 		DisableScreens();
@@ -75,7 +81,6 @@ public class GameManager : MonoSingleton<GameManager>
 					Time.timeScale = 0f;
 					DisplayResults();
 				}
-
 				break;
 			case GameState.LevelUp:
 				if (!ChoosingUpgrade)

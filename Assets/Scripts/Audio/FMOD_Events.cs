@@ -3,21 +3,15 @@ using UnityEngine;
 
 public class FMOD_Events : MonoBehaviour
 {
+	[field: Header("UI")]
 	[field: SerializeField]
-	public EventReference UiButtonPress { get; private set; }
-
+	public EventReference ClickButton { get; private set; }
+	
+	[field: Header("Game Background Music")]
 	[field: SerializeField]
-	public EventReference BackgroundMusic { get; private set; }
-
-	public static FMOD_Events Instance { get; private set; }
-
-	private void Awake()
-	{
-		if (Instance != null)
-		{
-			Debug.Log("Found double FMOD_Events on the scene");
-		}
-
-		Instance = this;
-	}
+	public EventReference MenuBackgroundMusic { get; private set; }
+	[field: SerializeField]
+	public EventReference GameBackgroundMusic { get; private set; }	
+	[field: SerializeField]
+	public EventReference PauseBackgroundMusic { get; private set; }
 }

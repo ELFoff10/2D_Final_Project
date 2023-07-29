@@ -6,6 +6,8 @@ using Random = UnityEngine.Random;
 
 public class DropRateManager : MonoBehaviour
 {
+    public bool IsBoss = false;
+    
     [Serializable]
     public class Drops
     {
@@ -20,6 +22,12 @@ public class DropRateManager : MonoBehaviour
     {
         if (!gameObject.scene.isLoaded)
         {
+            return;
+        }
+
+        if (IsBoss)
+        {
+            GameManager.Instance.CurrentState = GameManager.GameState.GameOver;
             return;
         }
         
