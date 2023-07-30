@@ -42,10 +42,10 @@ MonoBehaviour:
   Path: Assets/Audio/FMOD/Build/Desktop/UI.bank
   Name: UI
   StudioPath: bank:/UI
-  lastModified: 638262976999169046
+  lastModified: 638263304484769932
   FileSizes:
   - Name: Desktop
-    Value: 1724960
+    Value: 1963680
   Exists: 1
 --- !u!114 &11400000
 MonoBehaviour:
@@ -69,13 +69,41 @@ MonoBehaviour:
   - {fileID: -4845962551723919938}
   - {fileID: 6828783468392734796}
   - {fileID: 2129788556762840424}
+  - {fileID: 684660572105311037}
   EditorParameters: []
   MasterBanks:
   - {fileID: 5195065109220349854}
   StringsBanks:
   - {fileID: 1834830440070922373}
-  cacheTime: 638262976999447987
+  cacheTime: 638263304484769932
   cacheVersion: 131605
+--- !u!114 &684660572105311037
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/BackgroundMusic/HistoryMusic
+  m_EditorClassIdentifier: 
+  Path: event:/BackgroundMusic/HistoryMusic
+  Guid:
+    Data1: -1268167327
+    Data2: 1087072786
+    Data3: 136975551
+    Data4: 1314165114
+  Banks:
+  - {fileID: -3241482755087690142}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 18000
 --- !u!114 &785654454298701504
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -111,10 +139,10 @@ MonoBehaviour:
   Path: Assets/Audio/FMOD/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638262976998798800
+  lastModified: 638263304479211025
   FileSizes:
   - Name: Desktop
-    Value: 1034
+    Value: 1076
   Exists: 1
 --- !u!114 &2129788556762840424
 MonoBehaviour:
@@ -185,7 +213,7 @@ MonoBehaviour:
   Path: Assets/Audio/FMOD/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638262976998768443
+  lastModified: 638263304479181008
   FileSizes:
   - Name: Desktop
     Value: 1036
