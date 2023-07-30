@@ -15,6 +15,6 @@ MonoBehaviour:
   _multiplier: 300
   _level: 5
   _nextLevelPrefab: {fileID: 1105076190270296182, guid: 4f7dab098e2b67442804cbb5e8e00b34, type: 3}
-  _name: Power Level 5
+  _name: Spinach Level 5
   _description: Increases Might by 300%
   _icon: {fileID: 21300000, guid: a2563f2b8dbc4044b9a50537d3a29962, type: 3}

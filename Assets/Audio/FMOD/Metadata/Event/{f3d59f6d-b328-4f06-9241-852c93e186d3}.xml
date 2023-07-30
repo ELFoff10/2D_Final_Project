@@ -2,13 +2,13 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="Event" id="{f3d59f6d-b328-4f06-9241-852c93e186d3}">
 		<property name="name">
-			<value>MenuMusic</value>
+			<value>GameBackgroundMusic</value>
 		</property>
 		<property name="outputFormat">
 			<value>1</value>
 		</property>
 		<relationship name="folder">
-			<destination>{bb45b732-71d5-4d0a-8838-ed22d3e79a4e}</destination>
+			<destination>{f1d1bb94-bc8a-496e-95e3-23fe13739bd2}</destination>
 		</relationship>
 		<relationship name="mixer">
 			<destination>{c2a07ee4-4c57-4a57-8e4e-91e6c143bf84}</destination>
@@ -32,7 +32,7 @@
 			<destination>{a67ca631-1b06-4164-ab42-e1077b4784f4}</destination>
 		</relationship>
 		<relationship name="banks">
-			<destination>{5fa6ea22-1163-4694-843d-eb8a53037591}</destination>
+			<destination>{9587c25d-7bbd-4eab-bf54-22cf81f08abd}</destination>
 		</relationship>
 	</object>
 	<object class="EventMixer" id="{c2a07ee4-4c57-4a57-8e4e-91e6c143bf84}">
@@ -69,6 +69,9 @@
 	<object class="Timeline" id="{a67ca631-1b06-4164-ab42-e1077b4784f4}">
 		<relationship name="modules">
 			<destination>{f2e40ab7-480e-4ede-9997-657aad2f6462}</destination>
+		</relationship>
+		<relationship name="markers">
+			<destination>{c089ed16-4ce8-48c5-8b79-a3564ac62f25}</destination>
 		</relationship>
 	</object>
 	<object class="EventMixerMaster" id="{2851d2f5-e340-4af6-93b1-b278da0495c1}">
@@ -111,6 +114,20 @@
 		</relationship>
 		<relationship name="output">
 			<destination>{2851d2f5-e340-4af6-93b1-b278da0495c1}</destination>
+		</relationship>
+	</object>
+	<object class="LoopRegion" id="{c089ed16-4ce8-48c5-8b79-a3564ac62f25}">
+		<property name="position">
+			<value>0</value>
+		</property>
+		<property name="length">
+			<value>54.622040816326532</value>
+		</property>
+		<relationship name="timeline">
+			<destination>{a67ca631-1b06-4164-ab42-e1077b4784f4}</destination>
+		</relationship>
+		<relationship name="markerTrack">
+			<destination>{afe946d8-9f03-413b-89ea-e4c47e1d5265}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusEffectChain" id="{485d80c4-bd12-4484-b327-f4c8de857ad4}">

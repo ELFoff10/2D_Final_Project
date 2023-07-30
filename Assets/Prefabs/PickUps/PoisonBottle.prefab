@@ -9,9 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5331793530285500435}
+  - component: {fileID: -1164278973462037000}
   - component: {fileID: 2602084851014076594}
   - component: {fileID: 4922536156625809525}
-  - component: {fileID: 6970668772729664384}
   - component: {fileID: -5088307432161321105}
   m_Layer: 0
   m_Name: PoisonBottle
@@ -35,6 +35,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-1164278973462037000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4047629460996333739}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44ca4121af7e4be8900df56cce45b7ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HealthToReduce: 35
 --- !u!212 &2602084851014076594
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -122,19 +135,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0.01166901}
   serializedVersion: 2
   m_Radius: 0.45367745
---- !u!114 &6970668772729664384
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4047629460996333739}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 39508edc77e523d4f8dcece1e1b92278, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  HealthToRestore: -50
 --- !u!50 &-5088307432161321105
 Rigidbody2D:
   serializedVersion: 4

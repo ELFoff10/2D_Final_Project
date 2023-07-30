@@ -5,7 +5,7 @@ using System.Linq;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-public class EnemySpawner : MonoBehaviour
+public class EnemySpawner : MonoSingleton<EnemySpawner>
 {
 	[Serializable]
 	public class Wave
@@ -13,7 +13,7 @@ public class EnemySpawner : MonoBehaviour
 		public string WaveName;
 		public List<EnemyGroup> EnemyGroups;
 		public int WaveQuota; // The total number of enemies to spawn in this wave
-		public float SpawnInterval;
+		public float SpawnInterval; // The interval at which to spawn enemies
 		public int SpawnCount; // The number of enemies already spawned in this wave
 	}
 
@@ -21,8 +21,8 @@ public class EnemySpawner : MonoBehaviour
 	public class EnemyGroup
 	{
 		public string EnemyName;
-		public int EnemyCount;
-		public int SpawnCount;
+		public int EnemyCount; // The number of enemies to spawn in this wave
+		public int SpawnCount; // The number of enemies of this type already spawned in this wave
 		public GameObject EnemyPrefab;
 	}
 
@@ -32,8 +32,8 @@ public class EnemySpawner : MonoBehaviour
 	[Header("Spawner Attributes")]
 	private float _spawnTimer; // Timer use to determine when to spawn the next enemy
 	public int EnemiesAlive;
-	public int MaxEnemiesAllowed;
-	public bool MaxEnemiesReached;
+	public int MaxEnemiesAllowed; // The maximum number of enemies allowed on the map at once
+	public bool MaxEnemiesReached = false; // A flag indicating if the maximum number of enemies has been reached
 	public float WaveInterval;
 	private bool _isWaveActive = false;
 
@@ -120,7 +120,9 @@ public class EnemySpawner : MonoBehaviour
 		_isWaveActive = true;
 
 		yield return new WaitForSeconds(WaveInterval);
-		if (CurrentWaveCount >= Waves.Count - 1)
+		
+		// If there are more waves to start after the current wave, move on to the next wave
+		if (CurrentWaveCount < Waves.Count - 1)
 		{
 			_isWaveActive = false;
 			CurrentWaveCount++;

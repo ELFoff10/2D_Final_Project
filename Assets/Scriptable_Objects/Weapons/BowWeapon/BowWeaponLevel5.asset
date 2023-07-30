@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: BowWeaponLevel5
   m_EditorClassIdentifier: 
   _prefab: {fileID: 4904390151531246391, guid: 4b71238d8ccbd5f45b576df838856484, type: 3}
+  _prefabGun: {fileID: 2340247577959732571, guid: b9b7481ede055154e858a3ce9b6a52e4, type: 3}
   _damage: 25
   _speed: 40
   _cooldownDuration: 0.6

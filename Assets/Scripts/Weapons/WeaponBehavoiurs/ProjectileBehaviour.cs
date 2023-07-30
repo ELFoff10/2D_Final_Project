@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class ProjectileBehaviour : ProjectileWeaponBehaviour
 {
+	public bool IsMove;
+
 	protected override void Start()
 	{
 		base.Start();
@@ -9,6 +11,9 @@ public class ProjectileBehaviour : ProjectileWeaponBehaviour
 
 	private void Update()
 	{
-		transform.position += Direction * (CurrentSpeed * Time.deltaTime);
+		if (IsMove)
+		{
+			transform.position += Direction * (CurrentSpeed * Time.deltaTime);
+		}
 	}
 }

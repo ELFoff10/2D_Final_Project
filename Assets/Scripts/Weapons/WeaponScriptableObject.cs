@@ -11,6 +11,13 @@ public class WeaponScriptableObject : ScriptableObject
 		private set => _prefab = value;
 	}
 	[SerializeField]
+	private GameObject _prefabGun;
+	public GameObject PrefabGun
+	{
+		get => _prefabGun;
+		private set => _prefabGun = value;
+	}
+	[SerializeField]
 	private float _damage;
 	public float Damage
 	{

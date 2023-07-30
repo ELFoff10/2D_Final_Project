@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: RifleWeaponLevel4
   m_EditorClassIdentifier: 
   _prefab: {fileID: 4904390151531246391, guid: e0eb2979803464a43ac4cb5cb09ccb5d, type: 3}
+  _prefabGun: {fileID: 841010465041214724, guid: 438a1a0305a13de42950779ca54970f1, type: 3}
   _damage: 20
   _speed: 35
   _cooldownDuration: 0.7
@@ -21,4 +22,4 @@ MonoBehaviour:
   _nextLevelPrefab: {fileID: 7216345248615862975, guid: 941f0cf1d0197fe4aaa9a777e96c7903, type: 3}
   _name: Rifle Level 4
   _description: Damage + 5, Speed + 5, Pierce +1, Cooldown -0.1
-  _icon: {fileID: 8333481726314500824, guid: 4061cbb0b10e4a968c871e05441cc087, type: 3}
+  _icon: {fileID: 21300000, guid: 5c3d5a681958ce74c9967026f8719361, type: 3}

@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: RifleWeaponLevel6
   m_EditorClassIdentifier: 
   _prefab: {fileID: 4904390151531246391, guid: dbacb4a4deab04f40aaa302be05bcff0, type: 3}
+  _prefabGun: {fileID: 841010465041214724, guid: 438a1a0305a13de42950779ca54970f1, type: 3}
   _damage: 30
   _speed: 80
   _cooldownDuration: 0.5
@@ -21,4 +22,4 @@ MonoBehaviour:
   _nextLevelPrefab: {fileID: 0}
   _name: Rifle Level 6
   _description: Damage + 5, Speed + 40, Pierce +1, Cooldown -0.1
-  _icon: {fileID: 8333481726314500824, guid: 4061cbb0b10e4a968c871e05441cc087, type: 3}
+  _icon: {fileID: 21300000, guid: 5c3d5a681958ce74c9967026f8719361, type: 3}

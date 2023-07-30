@@ -6,7 +6,7 @@ public class PlayerStats : MonoBehaviour
 {
 	public CharacterScriptableObject CharacterData;
 
-	private float _currentRecovery;
+	private float _currentRegenHp;
 	private float _currentHealth;
 	private float _currentMoveSpeed;
 	private float _currentMight;
@@ -31,17 +31,17 @@ public class PlayerStats : MonoBehaviour
 		}
 	}
 
-	public float CurrentRecovery
+	public float CurrentRegenHp
 	{
-		get => _currentRecovery;
+		get => _currentRegenHp;
 		set
 		{
-			if (_currentRecovery != value)
+			if (_currentRegenHp != value)
 			{
-				_currentRecovery = value;
+				_currentRegenHp = value;
 				if (GameManager.Instance != null)
 				{
-					GameManager.Instance.CurrentRecoveryText.text = "Recovery: " + _currentRecovery;
+					GameManager.Instance.CurrentRecoveryText.text = "RegenHp: " + _currentRegenHp;
 				}
 			}
 		}
@@ -151,7 +151,7 @@ public class PlayerStats : MonoBehaviour
 		_currentAnimator = GetComponent<Animator>();
 
 		CurrentHealth = CharacterData.MaxHealth;
-		CurrentRecovery = CharacterData.Recovery;
+		CurrentRegenHp = CharacterData.Recovery;
 		CurrentMoveSpeed = CharacterData.MoveSpeed;
 		CurrentMight = CharacterData.Might;
 		CurrentProjectileSpeed = CharacterData.ProjectileSpeed;
@@ -163,7 +163,7 @@ public class PlayerStats : MonoBehaviour
 	private void Start()
 	{
 		GameManager.Instance.CurrentHealthText.text = "Health:" + _currentHealth;
-		GameManager.Instance.CurrentRecoveryText.text = "Recovery: " + _currentRecovery;
+		GameManager.Instance.CurrentRecoveryText.text = "Recovery: " + _currentRegenHp;
 		GameManager.Instance.CurrentMoveSpeedText.text = "Move Speed: " + _currentMoveSpeed;
 		GameManager.Instance.CurrentMightText.text = "Might: " + _currentMight;
 		GameManager.Instance.CurrentProjectileSpeedText.text = "Projectile Speed: " + _currentProjectileSpeed;
@@ -267,11 +267,21 @@ public class PlayerStats : MonoBehaviour
 		}
 	}
 
+	public void ReduceHealth(float amount)
+	{
+		CurrentHealth -= amount;
+
+		if (CurrentHealth < 0)
+		{
+			Kill();
+		}
+	}
+
 	private void Recover()
 	{
 		if (CurrentHealth < CharacterData.MaxHealth)
 		{
-			CurrentHealth += CurrentRecovery * Time.deltaTime;
+			CurrentHealth += CurrentRegenHp * Time.deltaTime;
 
 			if (CurrentHealth > CharacterData.MaxHealth)
 			{

@@ -37,8 +37,7 @@ public class EnemyStats : MonoBehaviour
 
 	private void OnDestroy()
 	{
-		var enemySpawner = FindObjectOfType<EnemySpawner>();
-		enemySpawner.OnEnemyKilled();
+		EnemySpawner.Instance.OnEnemyKilled();
 	}
 
 	public void TakeDamage(float damage)
