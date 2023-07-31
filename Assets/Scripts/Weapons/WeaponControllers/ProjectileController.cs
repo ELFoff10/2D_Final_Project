@@ -18,5 +18,7 @@ public class ProjectileController : WeaponController
         var spawnedProjectile = Instantiate(WeaponData.Prefab);
         spawnedProjectile.transform.position = transform.position; 
         spawnedProjectile.GetComponent<ProjectileBehaviour>().DirectionChecker(PlayerMovement.LastMovedVector);
+        
+        
     }
 }

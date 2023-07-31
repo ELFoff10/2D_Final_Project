@@ -61,6 +61,7 @@ public class EnemyStats : MonoBehaviour
 
 		var player = other.gameObject.GetComponent<PlayerStats>();
 		player.TakeDamage(CurrentDamage);
+		AudioManager.Instance.EventInstances[6].start();
 	}
 
 	private void ReturnEnemy()

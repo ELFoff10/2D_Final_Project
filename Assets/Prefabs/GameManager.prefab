@@ -1,0 +1,94 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &7225112062147380846
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8225425271290080135}
+  - component: {fileID: 8830233873760160641}
+  - component: {fileID: 6089114487225825522}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8225425271290080135
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7225112062147380846}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8830233873760160641
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7225112062147380846}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5ea4d2899733bc4f85d3fad504ecea4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _doNotDestroyOnLoad: 0
+  CurrentState: 0
+  PreviousState: 0
+  PauseScreen: {fileID: 0}
+  ResultsScreen: {fileID: 0}
+  LevelUpScreen: {fileID: 0}
+  CurrentHealthText: {fileID: 0}
+  CurrentRecoveryText: {fileID: 0}
+  CurrentMoveSpeedText: {fileID: 0}
+  CurrentMightText: {fileID: 0}
+  CurrentProjectileSpeedText: {fileID: 0}
+  CurrentMagnetText: {fileID: 0}
+  ChosenCharacterImage: {fileID: 0}
+  ChosenCharacterName: {fileID: 0}
+  LevelReachedDisplay: {fileID: 0}
+  TimeSurvivedDisplay: {fileID: 0}
+  ChosenWeaponsUI:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  ChosenPassiveItemsUI:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  TimeLimit: 240
+  StopwatchDisplay: {fileID: 0}
+  IsGameOver: 0
+  ChoosingUpgrade: 0
+  PlayerObject: {fileID: 0}
+--- !u!114 &6089114487225825522
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7225112062147380846}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf6e6c3ec31d9d24a82fcd656aa34528, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

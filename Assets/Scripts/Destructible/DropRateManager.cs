@@ -27,7 +27,7 @@ public class DropRateManager : MonoBehaviour
 
         if (IsBoss)
         {
-            GameManager.Instance.CurrentState = GameManager.GameState.GameOver;
+            GameManager.Instance.CurrentState = GameManager.GameState.Victory;
             return;
         }
         

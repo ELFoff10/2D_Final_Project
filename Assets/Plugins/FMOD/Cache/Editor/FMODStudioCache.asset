@@ -47,6 +47,60 @@ MonoBehaviour:
   - Name: Desktop
     Value: 1963680
   Exists: 1
+--- !u!114 &-2359996740089871062
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Game/DamageFlyBat
+  m_EditorClassIdentifier: 
+  Path: event:/Game/DamageFlyBat
+  Guid:
+    Data1: 303496185
+    Data2: 1156936136
+    Data3: 1957824167
+    Data4: -1600774348
+  Banks:
+  - {fileID: 785654454298701504}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-632768829005160997
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Game/PickUpGem
+  m_EditorClassIdentifier: 
+  Path: event:/Game/PickUpGem
+  Guid:
+    Data1: -162741971
+    Data2: 1129600046
+    Data3: 539895465
+    Data4: 688881370
+  Banks:
+  - {fileID: 785654454298701504}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -70,12 +124,15 @@ MonoBehaviour:
   - {fileID: 6828783468392734796}
   - {fileID: 2129788556762840424}
   - {fileID: 684660572105311037}
+  - {fileID: -632768829005160997}
+  - {fileID: 3611459868494431088}
+  - {fileID: -2359996740089871062}
   EditorParameters: []
   MasterBanks:
   - {fileID: 5195065109220349854}
   StringsBanks:
   - {fileID: 1834830440070922373}
-  cacheTime: 638263304484769932
+  cacheTime: 638264107000210282
   cacheVersion: 131605
 --- !u!114 &684660572105311037
 MonoBehaviour:
@@ -119,10 +176,10 @@ MonoBehaviour:
   Path: Assets/Audio/FMOD/Build/Desktop/Game.bank
   Name: Game
   StudioPath: bank:/Game
-  lastModified: 638262976999447987
+  lastModified: 638264107000050476
   FileSizes:
   - Name: Desktop
-    Value: 686016
+    Value: 1248256
   Exists: 1
 --- !u!114 &1834830440070922373
 MonoBehaviour:
@@ -139,10 +196,10 @@ MonoBehaviour:
   Path: Assets/Audio/FMOD/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638263304479211025
+  lastModified: 638264107000210282
   FileSizes:
   - Name: Desktop
-    Value: 1076
+    Value: 1226
   Exists: 1
 --- !u!114 &2129788556762840424
 MonoBehaviour:
@@ -198,6 +255,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &3611459868494431088
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Game/PickUpBottle
+  m_EditorClassIdentifier: 
+  Path: event:/Game/PickUpBottle
+  Guid:
+    Data1: 474671947
+    Data2: 1110126374
+    Data3: 253917110
+    Data4: -1737923310
+  Banks:
+  - {fileID: 785654454298701504}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &5195065109220349854
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -213,7 +297,7 @@ MonoBehaviour:
   Path: Assets/Audio/FMOD/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638263304479181008
+  lastModified: 638264107000170286
   FileSizes:
   - Name: Desktop
     Value: 1036

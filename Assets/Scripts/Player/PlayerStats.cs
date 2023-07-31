@@ -144,7 +144,7 @@ public class PlayerStats : MonoBehaviour
 		if (CharacterSelector.Instance != null)
 		{
 			CharacterData = CharacterSelector.Instance.GetData();
-			CharacterSelector.Instance.DestroyCharacterSelector();
+			// CharacterSelector.Instance.DestroyCharacterSelector();
 		}
 
 		_inventory = GetComponent<InventoryManager>();

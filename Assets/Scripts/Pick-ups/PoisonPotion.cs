@@ -12,6 +12,8 @@ public class PoisonPotion : Pickup
 		{
 			base.Collect();
 		}
+		
+		AudioManager.Instance.EventInstances[5].start();
 
 		var player = FindObjectOfType<PlayerStats>();
 		player.ReduceHealth(HealthToReduce);

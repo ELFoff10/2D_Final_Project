@@ -17,7 +17,10 @@ public class AudioManager : MonoSingleton<AudioManager>
 		CreateInstance(_fmodEvents.ClickButton);
 		CreateInstance(_fmodEvents.MenuBackgroundMusic);
 		CreateInstance(_fmodEvents.GameBackgroundMusic);
-		CreateInstance(_fmodEvents.PauseBackgroundMusic);
+		CreateInstance(_fmodEvents.PauseBackgroundMusic);	
+		CreateInstance(_fmodEvents.PickUpGem);
+		CreateInstance(_fmodEvents.PickUpBottle);
+		CreateInstance(_fmodEvents.DamageFlyBat);
 	}
 
 	public void PlayOneShot(EventReference sound)

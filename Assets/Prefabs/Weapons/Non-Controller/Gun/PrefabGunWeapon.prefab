@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 8497870292867879982}
   - component: {fileID: 2765593930626434515}
-  - component: {fileID: 3571426625148081299}
   - component: {fileID: 8166839722498889680}
+  - component: {fileID: 8659755442997214503}
   m_Layer: 0
   m_Name: PrefabGunWeapon
   m_TagString: Untagged
@@ -28,8 +28,8 @@ Transform:
   m_GameObject: {fileID: 5533522818084426157}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.822, y: -0.177, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -75,7 +75,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: acc7bc0be27acc04db2ce52af6e5b7fa, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b518b98d0d83eed43bfb674282a501b8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
   m_FlipY: 0
@@ -86,7 +86,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &3571426625148081299
+--- !u!114 &8166839722498889680
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5533522818084426157}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78d21489ba7214a4ba47a45fccacea08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _destroyAfterSeconds: 1
+  WeaponData: {fileID: 11400000, guid: 1fe1821cbb516ac419e1636b840914e1, type: 2}
+  IsMove: 0
+--- !u!114 &8659755442997214503
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -110,7 +125,7 @@ MonoBehaviour:
   onStart:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3571426625148081299}
+      - m_Target: {fileID: 8659755442997214503}
         m_TargetAssemblyTypeName: DG.Tweening.DOTweenAnimation, Assembly-CSharp-firstpass
         m_MethodName: DOPlay
         m_Mode: 1
@@ -144,8 +159,8 @@ MonoBehaviour:
   targetGO: {fileID: 0}
   tweenTargetIsTargetGO: 1
   delay: 0
-  duration: 1
-  easeType: 6
+  duration: 0.25
+  easeType: 7
   easeCurve:
     serializedVersion: 2
     m_Curve:
@@ -180,14 +195,14 @@ MonoBehaviour:
   autoGenerate: 1
   isActive: 1
   isValid: 1
-  target: {fileID: 2765593930626434515}
-  animationType: 7
-  targetType: 7
+  target: {fileID: 8497870292867879982}
+  animationType: 12
+  targetType: 11
   forcedTargetType: 0
   autoPlay: 1
   useTargetAsV3: 0
   endValueFloat: 0
-  endValueV3: {x: 0, y: 0, z: 0}
+  endValueV3: {x: 1, y: 0, z: 0}
   endValueV2: {x: 0, y: 0}
   endValueColor: {r: 1, g: 1, b: 1, a: 1}
   endValueString: 
@@ -199,25 +214,10 @@ MonoBehaviour:
     height: 0
   endValueTransform: {fileID: 0}
   optionalBool0: 0
-  optionalBool1: 0
+  optionalBool1: 1
   optionalFloat0: 0
-  optionalInt0: 0
+  optionalInt0: 2
   optionalRotationMode: 0
   optionalScrambleMode: 0
-  optionalShakeRandomnessMode: 0
+  optionalShakeRandomnessMode: 1
   optionalString: 
---- !u!114 &8166839722498889680
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5533522818084426157}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 78d21489ba7214a4ba47a45fccacea08, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _destroyAfterSeconds: 1
-  WeaponData: {fileID: 11400000, guid: 1fe1821cbb516ac419e1636b840914e1, type: 2}
-  IsMove: 0

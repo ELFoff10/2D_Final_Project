@@ -11,7 +11,8 @@ public class GameManager : MonoSingleton<GameManager>
 		Gameplay,
 		Paused,
 		GameOver,
-		LevelUp
+		LevelUp,
+		Victory
 	}
 
 	public GameState CurrentState;
@@ -21,6 +22,7 @@ public class GameManager : MonoSingleton<GameManager>
 	public GameObject PauseScreen;
 	public GameObject ResultsScreen;
 	public GameObject LevelUpScreen;
+	public GameObject VictoryScreen;
 
 	[Header("Current Stat Displays")]
 	public TMP_Text CurrentHealthText;
@@ -89,7 +91,13 @@ public class GameManager : MonoSingleton<GameManager>
 					Time.timeScale = 0f;
 					LevelUpScreen.SetActive(true);
 				}
-
+				break;
+			case GameState.Victory:
+				if (!ChoosingUpgrade)
+				{
+					Time.timeScale = 0f;
+					VictoryScreen.SetActive(true);
+				}
 				break;
 			default:
 				throw new ArgumentOutOfRangeException();
