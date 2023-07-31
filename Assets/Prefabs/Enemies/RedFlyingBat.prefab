@@ -158,10 +158,10 @@ MonoBehaviour:
     DropRate: 100
   - Name: 
     ItemPrefab: {fileID: 2178069568912430638, guid: 0bef29b2884b73b4798af846b6cec439, type: 3}
-    DropRate: 15
+    DropRate: 25
   - Name: 
     ItemPrefab: {fileID: 8118134338187037410, guid: 1a3a873465378f04bb9e953b20b23f2f, type: 3}
-    DropRate: 5
+    DropRate: 10
   - Name: 
     ItemPrefab: {fileID: 4047629460996333739, guid: eb5f928daa86b054597d42920ae061ec, type: 3}
     DropRate: 5

@@ -13,12 +13,13 @@ MonoBehaviour:
   m_Name: HammerWeaponLevel6
   m_EditorClassIdentifier: 
   _prefab: {fileID: 6565967707378730063, guid: 710d1c6220d1742488e7d6fd3b6aaf16, type: 3}
-  _damage: 40
+  _prefabGun: {fileID: 0}
+  _damage: 75
   _speed: 0
-  _cooldownDuration: 5
+  _cooldownDuration: 4
   _pierce: 0
   _level: 6
   _nextLevelPrefab: {fileID: 0}
   _name: Hammer Level 6
-  _description: Cooldown reduced by 0.2, Damage +15
+  _description: Cooldown reduced by 0.2, Damage +25
   _icon: {fileID: -892874023095245648, guid: 0d5ba4ee83da4f6cb095eef2d5946ba2, type: 3}

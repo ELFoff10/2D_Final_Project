@@ -13,9 +13,10 @@ MonoBehaviour:
   m_Name: SyctheWeapon
   m_EditorClassIdentifier: 
   _prefab: {fileID: 6565967707378730063, guid: 0ff19119ccd5434478714e8d0849a7be, type: 3}
+  _prefabGun: {fileID: 0}
   _damage: 10
   _speed: 0
-  _cooldownDuration: 2
+  _cooldownDuration: 4
   _pierce: 0
   _level: 1
   _nextLevelPrefab: {fileID: 81333858121102419, guid: 120303f5c3e90fe4395c7018aeb78733, type: 3}

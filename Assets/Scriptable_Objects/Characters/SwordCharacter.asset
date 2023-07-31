@@ -15,10 +15,9 @@ MonoBehaviour:
   _icon: {fileID: 21300000, guid: 5fd50594014b70e48bd6993443d46b32, type: 3}
   _name: Sword
   _startingWeapon: {fileID: 81333858121102419, guid: 7fc95dbe7a9d6a3469a8636bbd65996c, type: 3}
-  _maxHealth: 100
-  _recovery: 1
-  _moveSpeed: 4
-  _might: 1
+  _maxHealth: 75
+  _recovery: 3
+  _moveSpeed: 2
+  _might: 2
   _projectileSpeed: 0
   _magnet: 2
-  _animator: {fileID: 9100000, guid: 7481380437d8cb64cacb2ac7740100bf, type: 2}

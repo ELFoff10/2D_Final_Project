@@ -16,8 +16,8 @@ MonoBehaviour:
   _name: Sycthe
   _startingWeapon: {fileID: 81333858121102419, guid: 959e77170477acf468a17b5d743f8416, type: 3}
   _maxHealth: 100
-  _recovery: 1
+  _recovery: 4
   _moveSpeed: 4
-  _might: 1
+  _might: 4
   _projectileSpeed: 0
-  _magnet: 2
+  _magnet: 4

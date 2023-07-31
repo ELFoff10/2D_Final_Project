@@ -16,8 +16,8 @@ MonoBehaviour:
   _name: Hammer
   _startingWeapon: {fileID: 81333858121102419, guid: 32d7c77454e4dae4a827173b87939d0c, type: 3}
   _maxHealth: 150
-  _recovery: 1
-  _moveSpeed: 3
-  _might: 1
+  _recovery: 5
+  _moveSpeed: 1
+  _might: 5
   _projectileSpeed: 0
-  _magnet: 25
+  _magnet: 1

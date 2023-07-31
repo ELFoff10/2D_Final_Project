@@ -13,9 +13,10 @@ MonoBehaviour:
   m_Name: HammerWeaponLevel2
   m_EditorClassIdentifier: 
   _prefab: {fileID: 6565967707378730063, guid: d481c7b895d2dc045ad7bed34ced7583, type: 3}
-  _damage: 10
+  _prefabGun: {fileID: 0}
+  _damage: 20
   _speed: 0
-  _cooldownDuration: 5.8
+  _cooldownDuration: 4.8
   _pierce: 0
   _level: 2
   _nextLevelPrefab: {fileID: 81333858121102419, guid: f94c6f6cbbcf3f94b9a74775fa0b614e, type: 3}
