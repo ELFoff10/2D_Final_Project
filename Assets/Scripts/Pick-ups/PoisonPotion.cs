@@ -13,7 +13,7 @@ public class PoisonPotion : Pickup
 			base.Collect();
 		}
 		
-		AudioManager.Instance.EventInstances[5].start();
+		AudioManager.Instance.EventInstances[(int)AudioNameEnum.PickUpBottle].start();
 
 		var player = FindObjectOfType<PlayerStats>();
 		player.ReduceHealth(HealthToReduce);

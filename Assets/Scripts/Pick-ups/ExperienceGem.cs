@@ -13,7 +13,7 @@ public class ExperienceGem : Pickup
 			base.Collect();
 		}
 
-		AudioManager.Instance.EventInstances[4].start();
+		AudioManager.Instance.EventInstances[(int)AudioNameEnum.PickUpGem].start();
 
 		var playerStats = FindObjectOfType<PlayerStats>();
 		playerStats.IncreaseExperience(ExperienceGranted);

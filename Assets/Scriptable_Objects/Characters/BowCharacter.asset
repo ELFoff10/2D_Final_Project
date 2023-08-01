@@ -15,9 +15,9 @@ MonoBehaviour:
   _icon: {fileID: 21300000, guid: 5d7061fc7da05ce44add317708ec7215, type: 3}
   _name: Bow
   _startingWeapon: {fileID: 7216345248615862975, guid: 97814b7b2a1416e4496fbcd6861796e5, type: 3}
-  _maxHealth: 25
+  _maxHealth: 40
   _recovery: 1
-  _moveSpeed: 10
+  _moveSpeed: 6
   _might: 3
   _projectileSpeed: 3
   _magnet: 1

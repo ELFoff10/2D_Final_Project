@@ -114,9 +114,6 @@ public class PlayerStats : MonoBehaviour
 
 	#endregion
 
-	[HideInInspector]
-	public Animator _currentAnimator;
-
 	[Header("Experience/Level")]
 	public int Experience = 0;
 	public int Level = 1;
@@ -148,7 +145,6 @@ public class PlayerStats : MonoBehaviour
 		}
 
 		_inventory = GetComponent<InventoryManager>();
-		_currentAnimator = GetComponent<Animator>();
 
 		CurrentHealth = CharacterData.MaxHealth;
 		CurrentRegenHp = CharacterData.Recovery;
@@ -162,7 +158,7 @@ public class PlayerStats : MonoBehaviour
 
 	private void Start()
 	{
-		GameManager.Instance.CurrentHealthText.text = "Health:" + _currentHealth;
+		GameManager.Instance.CurrentHealthText.text = "Health: " + _currentHealth;
 		GameManager.Instance.CurrentRecoveryText.text = "Recovery: " + _currentRegenHp;
 		GameManager.Instance.CurrentMoveSpeedText.text = "Move Speed: " + _currentMoveSpeed;
 		GameManager.Instance.CurrentMightText.text = "Might: " + _currentMight;
@@ -200,13 +196,13 @@ public class PlayerStats : MonoBehaviour
 		UpdateExperienceBar();
 	}
 
-	void LevelUpChecker()
+	private void LevelUpChecker()
 	{
 		if (Experience < ExperienceCap) return;
 		Level++;
 		Experience -= ExperienceCap;
 		ExperienceCap += ExperienceCapIncrease;
-
+		
 		UpdateLevelText();
 
 		GameManager.Instance.StartLevelUp();
@@ -241,7 +237,7 @@ public class PlayerStats : MonoBehaviour
 
 	private void UpdateHealthBar()
 	{
-		HealthBar.fillAmount = CurrentHealth / CharacterData.MaxHealth;
+		HealthBar.fillAmount = _currentHealth / CharacterData.MaxHealth;
 	}
 
 	private void Kill()

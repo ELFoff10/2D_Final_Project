@@ -15,7 +15,7 @@ MonoBehaviour:
   _icon: {fileID: 21300000, guid: 5c3d5a681958ce74c9967026f8719361, type: 3}
   _name: Rifle
   _startingWeapon: {fileID: 7216345248615862975, guid: 21c9e81efa8ca924c9f4d8e956bc3a2c, type: 3}
-  _maxHealth: 25
+  _maxHealth: 40
   _recovery: 1
   _moveSpeed: 5
   _might: 5

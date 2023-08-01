@@ -35,22 +35,22 @@ public class AudioManager : MonoSingleton<AudioManager>
 
 	public void MenuBackgroundMusicStart()
 	{
-		EventInstances[1].start();
+		EventInstances[(int)AudioNameEnum.MenuBackgroundMusic].start();
 	}
 	
 	public void MenuBackgroundMusicStop()
 	{
-		EventInstances[1].stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+		EventInstances[(int)AudioNameEnum.MenuBackgroundMusic].stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
 	}
 	
 	public void GameBackgroundMusicStart()
 	{
-		EventInstances[2].start();
+		EventInstances[(int)AudioNameEnum.GameBackgroundMusic].start();
 	}
 	
 	public void GameBackgroundMusicStop()
 	{
-		EventInstances[2].stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+		EventInstances[(int)AudioNameEnum.GameBackgroundMusic].stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
 	}
 
 	private EventInstance CreateInstance(EventReference eventReference)

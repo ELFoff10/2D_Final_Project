@@ -22,7 +22,6 @@ public class GameManager : MonoSingleton<GameManager>
 	public GameObject PauseScreen;
 	public GameObject ResultsScreen;
 	public GameObject LevelUpScreen;
-	public GameObject VictoryScreen;
 
 	[Header("Current Stat Displays")]
 	public TMP_Text CurrentHealthText;
@@ -49,15 +48,16 @@ public class GameManager : MonoSingleton<GameManager>
 	public TMP_Text StopwatchDisplay;
 
 	public bool IsGameOver;
-
 	public bool ChoosingUpgrade;
-
 	public GameObject PlayerObject;
+	public GameObject ButtonRestart;
+	public GameObject ButtonNextLevel;
+	
 
 	protected override void Awake()
 	{
 		base.Awake();
-		AudioManager.Instance.EventInstances[2].start();
+		AudioManager.Instance.EventInstances[(int)AudioNameEnum.GameBackgroundMusic].start();
 	}
 
 	private void Start()
@@ -77,12 +77,8 @@ public class GameManager : MonoSingleton<GameManager>
 				CheckForPauseAndResume();
 				break;
 			case GameState.GameOver:
-				if (!IsGameOver)
-				{
-					IsGameOver = true;
-					Time.timeScale = 0f;
-					DisplayResults();
-				}
+				Time.timeScale = 0f;
+				DisplayResults();
 				break;
 			case GameState.LevelUp:
 				if (!ChoosingUpgrade)
@@ -91,13 +87,16 @@ public class GameManager : MonoSingleton<GameManager>
 					Time.timeScale = 0f;
 					LevelUpScreen.SetActive(true);
 				}
+
 				break;
 			case GameState.Victory:
 				if (!ChoosingUpgrade)
 				{
 					Time.timeScale = 0f;
-					VictoryScreen.SetActive(true);
+					DisplayResults();
+					Victory();
 				}
+
 				break;
 			default:
 				throw new ArgumentOutOfRangeException();
@@ -242,5 +241,11 @@ public class GameManager : MonoSingleton<GameManager>
 		Time.timeScale = 1f;
 		LevelUpScreen.SetActive(false);
 		ChangeState(GameState.Gameplay);
+	}
+
+	public void Victory()
+	{
+		ButtonRestart.gameObject.SetActive(false);
+		ButtonNextLevel.gameObject.SetActive(true);
 	}
 }
