@@ -56,7 +56,6 @@ public class GameManager : MonoSingleton<GameManager>
 	protected override void Awake()
 	{
 		base.Awake();
-		AudioManager.Instance.EventInstances[(int)AudioNameEnum.GameBackgroundMusic].start();
 	}
 
 	private void Start()

@@ -17,7 +17,7 @@ MonoBehaviour:
   _damage: 15
   _speed: 25
   _cooldownDuration: 0.9
-  _pierce: 2
+  _pierce: 4
   _level: 2
   _nextLevelPrefab: {fileID: 7216345248615862975, guid: 1ac87ed89a4dbaf448ffff412d7e844a, type: 3}
   _name: Rifle Level 2

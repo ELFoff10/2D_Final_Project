@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7237ba8d83508aa4884ddbadaf152718, type: 3}
   m_Name: ZombieBossLevel2
   m_EditorClassIdentifier: 
-  _moveSpeed: 3
-  _maxHealth: 1000
+  _moveSpeed: 5
+  _maxHealth: 5000
   _damage: 150

@@ -17,7 +17,7 @@ MonoBehaviour:
   _damage: 30
   _speed: 80
   _cooldownDuration: 0.01
-  _pierce: 6
+  _pierce: 5
   _level: 6
   _nextLevelPrefab: {fileID: 0}
   _name: Gun Level 6
