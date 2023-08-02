@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using FMOD.Studio;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -22,6 +23,7 @@ public class GameManager : MonoSingleton<GameManager>
 	public GameObject PauseScreen;
 	public GameObject ResultsScreen;
 	public GameObject LevelUpScreen;
+	public GameObject VictoryScreen;
 
 	[Header("Current Stat Displays")]
 	public TMP_Text CurrentHealthText;
@@ -50,9 +52,6 @@ public class GameManager : MonoSingleton<GameManager>
 	public bool IsGameOver;
 	public bool ChoosingUpgrade;
 	public GameObject PlayerObject;
-	public GameObject ButtonRestart;
-	public GameObject ButtonNextLevel;
-	
 
 	protected override void Awake()
 	{
@@ -77,6 +76,7 @@ public class GameManager : MonoSingleton<GameManager>
 				CheckForPauseAndResume();
 				break;
 			case GameState.GameOver:
+				IsGameOver = true;
 				Time.timeScale = 0f;
 				DisplayResults();
 				break;
@@ -92,8 +92,11 @@ public class GameManager : MonoSingleton<GameManager>
 			case GameState.Victory:
 				if (!ChoosingUpgrade)
 				{
+					AudioManager.Instance.EventInstances[(int)AudioNameEnum.GameBackgroundMusic]
+						.stop(STOP_MODE.ALLOWFADEOUT);
+					AudioManager.Instance.EventInstances[(int)AudioNameEnum.PauseBackgroundMusic].start();
+					IsGameOver = true;
 					Time.timeScale = 0f;
-					DisplayResults();
 					Victory();
 				}
 
@@ -115,6 +118,8 @@ public class GameManager : MonoSingleton<GameManager>
 			PreviousState = CurrentState;
 			ChangeState(GameState.Paused);
 			PauseScreen.SetActive(true);
+			AudioManager.Instance.EventInstances[(int)AudioNameEnum.GameBackgroundMusic].stop(STOP_MODE.ALLOWFADEOUT);
+			AudioManager.Instance.EventInstances[(int)AudioNameEnum.PauseBackgroundMusic].start();
 			Time.timeScale = 0f;
 		}
 	}
@@ -125,6 +130,8 @@ public class GameManager : MonoSingleton<GameManager>
 		{
 			ChangeState(PreviousState);
 			PauseScreen.SetActive(false);
+			AudioManager.Instance.EventInstances[(int)AudioNameEnum.GameBackgroundMusic].start();
+			AudioManager.Instance.EventInstances[(int)AudioNameEnum.PauseBackgroundMusic].stop(STOP_MODE.ALLOWFADEOUT);
 			Time.timeScale = 1f;
 		}
 	}
@@ -245,7 +252,6 @@ public class GameManager : MonoSingleton<GameManager>
 
 	public void Victory()
 	{
-		ButtonRestart.gameObject.SetActive(false);
-		ButtonNextLevel.gameObject.SetActive(true);
+		VictoryScreen.gameObject.SetActive(true);
 	}
 }

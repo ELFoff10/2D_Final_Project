@@ -20,14 +20,9 @@ public class PlayerStats : MonoBehaviour
 		get => _currentHealth;
 		set
 		{
-			if (_currentHealth != value)
-			{
-				_currentHealth = value;
-				if (GameManager.Instance != null)
-				{
-					GameManager.Instance.CurrentHealthText.text = "Health: " + _currentHealth;
-				}
-			}
+			_currentHealth = value;
+
+			GameManager.Instance.CurrentHealthText.text = "Health: " + _currentHealth;
 		}
 	}
 
@@ -36,14 +31,9 @@ public class PlayerStats : MonoBehaviour
 		get => _currentRegenHp;
 		set
 		{
-			if (_currentRegenHp != value)
-			{
-				_currentRegenHp = value;
-				if (GameManager.Instance != null)
-				{
-					GameManager.Instance.CurrentRecoveryText.text = "RegenHp: " + _currentRegenHp;
-				}
-			}
+			_currentRegenHp = value;
+
+			GameManager.Instance.CurrentRecoveryText.text = "RegenHp: " + _currentRegenHp;
 		}
 	}
 
@@ -52,14 +42,9 @@ public class PlayerStats : MonoBehaviour
 		get => _currentMoveSpeed;
 		set
 		{
-			if (_currentMoveSpeed != value)
-			{
-				_currentMoveSpeed = value;
-				if (GameManager.Instance != null)
-				{
-					GameManager.Instance.CurrentMoveSpeedText.text = "Move Speed:" + _currentMoveSpeed;
-				}
-			}
+			_currentMoveSpeed = value;
+
+			GameManager.Instance.CurrentMoveSpeedText.text = "Move Speed:" + _currentMoveSpeed;
 		}
 	}
 
@@ -68,14 +53,9 @@ public class PlayerStats : MonoBehaviour
 		get => _currentMight;
 		set
 		{
-			if (_currentMight != value)
-			{
-				_currentMight = value;
-				if (GameManager.Instance != null)
-				{
-					GameManager.Instance.CurrentMightText.text = "Might:" + _currentMight;
-				}
-			}
+			_currentMight = value;
+
+			GameManager.Instance.CurrentMightText.text = "Might:" + _currentMight;
 		}
 	}
 
@@ -84,15 +64,10 @@ public class PlayerStats : MonoBehaviour
 		get => _currentProjectileSpeed;
 		set
 		{
-			if (_currentProjectileSpeed != value)
-			{
-				_currentProjectileSpeed = value;
-				if (GameManager.Instance != null)
-				{
-					GameManager.Instance.CurrentProjectileSpeedText.text =
-						"Projectile Speed:" + _currentProjectileSpeed;
-				}
-			}
+			_currentProjectileSpeed = value;
+
+			GameManager.Instance.CurrentProjectileSpeedText.text =
+				"Projectile Speed:" + _currentProjectileSpeed;
 		}
 	}
 
@@ -101,14 +76,9 @@ public class PlayerStats : MonoBehaviour
 		get => _currentMagnet;
 		set
 		{
-			if (_currentMagnet != value)
-			{
-				_currentMagnet = value;
-				if (GameManager.Instance != null)
-				{
-					GameManager.Instance.CurrentMagnetText.text = "Magnet:" + _currentMagnet;
-				}
-			}
+			_currentMagnet = value;
+
+			GameManager.Instance.CurrentMagnetText.text = "Magnet:" + _currentMagnet;
 		}
 	}
 
@@ -202,7 +172,7 @@ public class PlayerStats : MonoBehaviour
 		Level++;
 		Experience -= ExperienceCap;
 		ExperienceCap += ExperienceCapIncrease;
-		
+
 		UpdateLevelText();
 
 		GameManager.Instance.StartLevelUp();

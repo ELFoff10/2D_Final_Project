@@ -5,29 +5,37 @@ public class CharacterScriptableObject : ScriptableObject
 {   
     [SerializeField]
     private Sprite _icon;
-    public Sprite Icon { get => _icon; private set => _icon = value; }   
+    public Sprite Icon => _icon;
+    
     [SerializeField]
     private string _name;
-    public string Name { get => _name; private set => _name = value; }
+    public string Name => _name;
+    
     [SerializeField]
     private GameObject _startingWeapon;
-    public GameObject StartingWeapon { get => _startingWeapon; private set => _startingWeapon = value; }   
+    public GameObject StartingWeapon => _startingWeapon;
+    
     [SerializeField]
     private float _maxHealth;
-    public float MaxHealth { get => _maxHealth; private set => _maxHealth = value; }    
+    public float MaxHealth => _maxHealth;
+    
     [SerializeField]
     private float _recovery;
-    public float Recovery { get => _recovery; private set => _recovery = value; }    
+    public float Recovery => _recovery;
+    
     [SerializeField]
     private float _moveSpeed;
-    public float MoveSpeed { get => _moveSpeed; private set => _moveSpeed = value; }   
+    public float MoveSpeed => _moveSpeed;
+
     [SerializeField]
     private float _might;
-    public float Might { get => _might; private set => _might = value; }   
+    public float Might => _might;
+
     [SerializeField]
     private float _projectileSpeed;
-    public float ProjectileSpeed { get => _projectileSpeed; private set => _projectileSpeed = value; }
+    public float ProjectileSpeed => _projectileSpeed;
+
     [SerializeField]
     private float _magnet;
-    public float Magnet { get => _magnet; private set => _magnet = value; }
+    public float Magnet => _magnet;
 }

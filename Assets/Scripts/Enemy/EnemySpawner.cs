@@ -120,7 +120,7 @@ public class EnemySpawner : MonoSingleton<EnemySpawner>
 		_isWaveActive = true;
 
 		yield return new WaitForSeconds(WaveInterval);
-		
+
 		// If there are more waves to start after the current wave, move on to the next wave
 		if (CurrentWaveCount < Waves.Count - 1)
 		{

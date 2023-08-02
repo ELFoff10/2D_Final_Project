@@ -5,10 +5,10 @@ public class PlayerMovement : MonoBehaviour
 	[SerializeField]
 	private DynamicJoystick _dynamicJoystick;
 
-	public float LastHorizontalVector { get; private set; }
-	public float LastVerticalVector { get; private set; }
-	public Vector2 MoveDir { get; private set; }
-	public Vector2 LastMovedVector { get; private set; }
+	public float LastHorizontalVector;
+	public float LastVerticalVector;
+	public Vector2 MoveDir;
+	public Vector2 LastMovedVector;
 
 	private Rigidbody2D _rigidbody2D;
 	private PlayerStats _player;

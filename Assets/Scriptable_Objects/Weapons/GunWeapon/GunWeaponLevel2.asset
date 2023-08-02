@@ -16,7 +16,7 @@ MonoBehaviour:
   _prefabGun: {fileID: 5533522818084426157, guid: 1ee6085d9138c12429b564149286af7d, type: 3}
   _damage: 10
   _speed: 25
-  _cooldownDuration: 0.9
+  _cooldownDuration: 0.4
   _pierce: 2
   _level: 2
   _nextLevelPrefab: {fileID: 7216345248615862975, guid: ed9501827a2bca84b8ff28231840f345, type: 3}

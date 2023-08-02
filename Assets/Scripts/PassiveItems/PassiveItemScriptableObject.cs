@@ -6,46 +6,25 @@ public class PassiveItemScriptableObject : ScriptableObject
 	[SerializeField]
 	private float _multiplier;
 
-	public float Multiplier
-	{
-		get => _multiplier;
-		private set => _multiplier = value;
-	}
+	public float Multiplier => _multiplier;
 
 	[SerializeField]
-	private int _level; // Not meant to be modified in the game [Only in Editor]
-	public int Level
-	{
-		get => _level;
-		private set => _level = value;
-	}
+	private int _level;
+	public int Level => _level;
 
 	[SerializeField]
 	private GameObject _nextLevelPrefab;
-	public GameObject NextLevelPrefab
-	{
-		get => _nextLevelPrefab;
-		private set => _nextLevelPrefab = value;
-	}
+	public GameObject NextLevelPrefab => _nextLevelPrefab;
+	
 	[SerializeField]
 	private string _name;
-	public string Name
-	{
-		get => _name;
-		private set => _name = value;
-	}
+	public string Name => _name;
+	
 	[SerializeField]
 	private string _description;
-	public string Description
-	{
-		get => _description;
-		private set => _description = value;
-	}
+	public string Description => _description;
+	
 	[SerializeField]
 	private Sprite _icon;
-	public Sprite Icon
-	{
-		get => _icon;
-		private set => _icon = value;
-	}
+	public Sprite Icon => _icon;
 }

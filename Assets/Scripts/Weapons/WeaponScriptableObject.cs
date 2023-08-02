@@ -5,79 +5,45 @@ public class WeaponScriptableObject : ScriptableObject
 {
 	[SerializeField]
 	private GameObject _prefab;
-	public GameObject Prefab
-	{
-		get => _prefab;
-		private set => _prefab = value;
-	}
+	public GameObject Prefab => _prefab;
+	
 	[SerializeField]
 	private GameObject _prefabGun;
-	public GameObject PrefabGun
-	{
-		get => _prefabGun;
-		private set => _prefabGun = value;
-	}
+	public GameObject PrefabGun => _prefabGun;
+	
 	[SerializeField]
 	private float _damage;
-	public float Damage
-	{
-		get => _damage;
-		private set => _damage = value;
-	}
+	public float Damage => _damage;
+	
 	[SerializeField]
 	private float _speed;
-	public float Speed
-	{
-		get => _speed;
-		private set => _speed = value;
-	}
+	public float Speed => _speed;
+	
 	[SerializeField]
 	private float _cooldownDuration;
-	public float CooldownDuration
-	{
-		get => _cooldownDuration;
-		private set => _cooldownDuration = value;
-	}
+	public float CooldownDuration => _cooldownDuration;
+	
 	[SerializeField]
 	private int _pierce;
-	public int Pierce
-	{
-		get => _pierce;
-		private set => _pierce = value;
-	}
+	public int Pierce => _pierce;
+	
 	[SerializeField]
 	private int _level;
-	public int Level
-	{
-		get => _level;
-		private set => _level = value;
-	}
+	public int Level => _level;
+	
 	[SerializeField]
 	private GameObject _nextLevelPrefab;
-	public GameObject NextLevelPrefab
-	{
-		get => _nextLevelPrefab;
-		private set => _nextLevelPrefab = value;
-	}
+	public GameObject NextLevelPrefab => _nextLevelPrefab;
+	
 	[SerializeField]
 	private string _name;
-	public string Name
-	{
-		get => _name;
-		private set => _name = value;
-	}
+	public string Name => _name;
+	
 	[SerializeField]
 	private string _description;
-	public string Description
-	{
-		get => _description;
-		private set => _description = value;
-	}
+	public string Description => _description;
+	
 	[SerializeField]
 	private Sprite _icon;
-	public Sprite Icon
-	{
-		get => _icon;
-		private set => _icon = value;
-	}
+	public Sprite Icon => _icon;
 }

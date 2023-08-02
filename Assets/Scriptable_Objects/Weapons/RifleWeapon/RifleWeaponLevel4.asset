@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _prefab: {fileID: 4904390151531246391, guid: e0eb2979803464a43ac4cb5cb09ccb5d, type: 3}
   _prefabGun: {fileID: 841010465041214724, guid: 438a1a0305a13de42950779ca54970f1, type: 3}
-  _damage: 20
+  _damage: 25
   _speed: 35
   _cooldownDuration: 0.7
   _pierce: 4
