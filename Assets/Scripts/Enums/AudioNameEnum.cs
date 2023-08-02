@@ -6,5 +6,7 @@ public enum AudioNameEnum
 	PauseBackgroundMusic,
 	PickUpGem,
 	PickUpBottle,
-	DamageFlyBat
+	DamageFlyBat,
+	GameBackgroundMusicLevel2,
+	Victory
 }

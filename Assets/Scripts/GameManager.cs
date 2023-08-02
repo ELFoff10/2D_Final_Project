@@ -92,6 +92,7 @@ public class GameManager : MonoSingleton<GameManager>
 			case GameState.Victory:
 				if (!ChoosingUpgrade)
 				{
+					AudioManager.Instance.EventInstances[(int)AudioNameEnum.Victory].start();
 					AudioManager.Instance.EventInstances[(int)AudioNameEnum.GameBackgroundMusic]
 						.stop(STOP_MODE.ALLOWFADEOUT);
 					AudioManager.Instance.EventInstances[(int)AudioNameEnum.PauseBackgroundMusic].start();

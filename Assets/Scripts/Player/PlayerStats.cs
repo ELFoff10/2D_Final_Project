@@ -155,6 +155,7 @@ public class PlayerStats : MonoBehaviour
 		}
 
 		Recover();
+		UpdateHealthBar();
 	}
 
 	public void IncreaseExperience(int amount)
@@ -201,8 +202,6 @@ public class PlayerStats : MonoBehaviour
 		{
 			Kill();
 		}
-
-		UpdateHealthBar();
 	}
 
 	private void UpdateHealthBar()

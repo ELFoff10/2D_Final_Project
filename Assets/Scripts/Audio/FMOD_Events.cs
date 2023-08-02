@@ -11,7 +11,10 @@ public class FMOD_Events : MonoBehaviour
 	
 	[field: Header("Game Background Music")]
 	[field: SerializeField]
-	public EventReference GameBackgroundMusic { get; private set; }	
+	public EventReference GameBackgroundMusicLevel1 { get; private set; }	
+	[field: SerializeField]
+	public EventReference GameBackgroundMusicLevel2 { get; private set; }	
+	
 	[field: SerializeField]
 	public EventReference PauseBackgroundMusic { get; private set; }
 	
@@ -21,5 +24,7 @@ public class FMOD_Events : MonoBehaviour
 	[field: SerializeField]
 	public EventReference PickUpBottle { get; private set; }
     [field: SerializeField]
-	public EventReference DamageFlyBat { get; private set; }	
+	public EventReference DamageFlyBat { get; private set; }	 
+	[field: SerializeField]
+	public EventReference Victory { get; private set; }	
 }

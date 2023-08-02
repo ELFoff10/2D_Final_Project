@@ -1,5 +1,3 @@
-using System;
-
 public class CharacterSelector : MonoSingleton<CharacterSelector>
 {
 	private CharacterScriptableObject _characterData;

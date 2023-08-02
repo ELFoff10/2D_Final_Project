@@ -568,9 +568,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
+  m_Maskable: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -625,7 +625,7 @@ MonoBehaviour:
   m_enableKerning: 1
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
-  m_isRichText: 1
+  m_isRichText: 0
   m_parseCtrlCharacters: 1
   m_isOrthographic: 1
   m_isCullingEnabled: 0
@@ -1954,7 +1954,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 5
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -2029,6 +2029,7 @@ GameObject:
   - component: {fileID: 359081706}
   - component: {fileID: 359081705}
   - component: {fileID: 359081704}
+  - component: {fileID: 359081707}
   m_Layer: 5
   m_Name: UpgradeOptionButton
   m_TagString: Untagged
@@ -2098,7 +2099,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 359081705}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 359081707}
+        m_TargetAssemblyTypeName: UIButton, Assembly-CSharp
+        m_MethodName: Click
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &359081705
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2137,6 +2150,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 359081702}
   m_CullTransparentMesh: 1
+--- !u!114 &359081707
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 359081702}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fafb88adf8c4bcc8b4c07896b21860b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &362457347
 GameObject:
   m_ObjectHideFlags: 0
@@ -2720,6 +2745,7 @@ GameObject:
   - component: {fileID: 496303611}
   - component: {fileID: 496303610}
   - component: {fileID: 496303609}
+  - component: {fileID: 496303612}
   m_Layer: 5
   m_Name: UpgradeOptionButton
   m_TagString: Untagged
@@ -2789,7 +2815,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 496303610}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 496303612}
+        m_TargetAssemblyTypeName: UIButton, Assembly-CSharp
+        m_MethodName: Click
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &496303610
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2828,6 +2866,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 496303607}
   m_CullTransparentMesh: 1
+--- !u!114 &496303612
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 496303607}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fafb88adf8c4bcc8b4c07896b21860b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &513470935
 GameObject:
   m_ObjectHideFlags: 0
@@ -3812,6 +3862,7 @@ GameObject:
   - component: {fileID: 773726393}
   - component: {fileID: 773726392}
   - component: {fileID: 773726391}
+  - component: {fileID: 773726394}
   m_Layer: 5
   m_Name: UpgradeOptionButton
   m_TagString: Untagged
@@ -3882,9 +3933,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
-        m_MethodName: PlayButtonClick
+      - m_Target: {fileID: 773726394}
+        m_TargetAssemblyTypeName: UIButton, Assembly-CSharp
+        m_MethodName: Click
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3932,6 +3983,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 773726389}
   m_CullTransparentMesh: 1
+--- !u!114 &773726394
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 773726389}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fafb88adf8c4bcc8b4c07896b21860b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &802773086
 GameObject:
   m_ObjectHideFlags: 0
@@ -5162,6 +5225,7 @@ GameObject:
   - component: {fileID: 1021683328}
   - component: {fileID: 1021683327}
   - component: {fileID: 1021683326}
+  - component: {fileID: 1021683329}
   m_Layer: 5
   m_Name: UpgradeOptionButton
   m_TagString: Untagged
@@ -5231,7 +5295,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1021683327}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1021683329}
+        m_TargetAssemblyTypeName: UIButton, Assembly-CSharp
+        m_MethodName: Click
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1021683327
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5270,6 +5346,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1021683324}
   m_CullTransparentMesh: 1
+--- !u!114 &1021683329
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1021683324}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fafb88adf8c4bcc8b4c07896b21860b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1030040878
 GameObject:
   m_ObjectHideFlags: 0
@@ -6178,7 +6266,7 @@ MonoBehaviour:
   - {fileID: 4975899700573776161, guid: 9cef81c64d0b487438deecc530a301ee, type: 3}
   - {fileID: 4975899700573776161, guid: 8dc7a7868fc58644c87c9314c83e7c6c, type: 3}
   - {fileID: 4975899700573776161, guid: 3c3a73d11441b554cb739852fc31fab0, type: 3}
-  MaxOpDist: 100
+  MaxOpDist: 105
   OptimizerCooldownDur: 1
 --- !u!4 &1238761675
 Transform:
@@ -8283,6 +8371,7 @@ GameObject:
   - component: {fileID: 1908658432}
   - component: {fileID: 1908658431}
   - component: {fileID: 1908658430}
+  - component: {fileID: 1908658433}
   m_Layer: 5
   m_Name: Resume
   m_TagString: Untagged
@@ -8354,6 +8443,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 1908658433}
+        m_TargetAssemblyTypeName: UIButton, Assembly-CSharp
+        m_MethodName: Click
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 1059650780}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
         m_MethodName: ResumeGame
@@ -8386,7 +8487,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300022, guid: 1eaee135ce037439d925cee5e41ce026, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -8404,6 +8505,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1908658428}
   m_CullTransparentMesh: 1
+--- !u!114 &1908658433
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1908658428}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fafb88adf8c4bcc8b4c07896b21860b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1911342351
 GameObject:
   m_ObjectHideFlags: 0
@@ -8416,6 +8529,7 @@ GameObject:
   - component: {fileID: 1911342355}
   - component: {fileID: 1911342354}
   - component: {fileID: 1911342353}
+  - component: {fileID: 1911342356}
   m_Layer: 5
   m_Name: Quit
   m_TagString: Untagged
@@ -8487,6 +8601,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 1911342356}
+        m_TargetAssemblyTypeName: UIButton, Assembly-CSharp
+        m_MethodName: Click
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 1059650782}
         m_TargetAssemblyTypeName: SceneController, Assembly-CSharp
         m_MethodName: Menu
@@ -8512,14 +8638,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.5981132, b: 0.5981132, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300022, guid: 1eaee135ce037439d925cee5e41ce026, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -8537,6 +8663,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1911342351}
   m_CullTransparentMesh: 1
+--- !u!114 &1911342356
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1911342351}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fafb88adf8c4bcc8b4c07896b21860b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1911902030
 GameObject:
   m_ObjectHideFlags: 0
@@ -9549,6 +9687,30 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 8996772838601247710}
+        m_TargetAssemblyTypeName: UIButton, Assembly-CSharp
+        m_MethodName: Click
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 8996772838601247710}
+        m_TargetAssemblyTypeName: UIButton, Assembly-CSharp
+        m_MethodName: GameBackgroundMusicLevel2Start
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 1059650782}
         m_TargetAssemblyTypeName: SceneController, Assembly-CSharp
         m_MethodName: SceneChange
@@ -10073,11 +10235,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8807875419532051529, guid: 9cef81c64d0b487438deecc530a301ee, type: 3}
       propertyPath: m_Size.x
-      value: 36
+      value: 32
       objectReference: {fileID: 0}
     - target: {fileID: 8807875419532051529, guid: 9cef81c64d0b487438deecc530a301ee, type: 3}
       propertyPath: m_Size.y
-      value: 12
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -10233,7 +10395,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1001 &7230459583143951326
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10468,6 +10630,7 @@ GameObject:
   - component: {fileID: 1894334112912559894}
   - component: {fileID: 452026598289434110}
   - component: {fileID: 927344156026872727}
+  - component: {fileID: 8996772838601247710}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -10475,6 +10638,18 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &8996772838601247710
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8996772838601247709}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fafb88adf8c4bcc8b4c07896b21860b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

@@ -9505,7 +9505,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ae4fbd2d42ef494bb2f0b17f83e813f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CharacterData: {fileID: 0}
+  CharacterData: {fileID: 11400000, guid: 30a01c854f2e89e458b3355ea1aacaf3, type: 2}
   Experience: 0
   Level: 1
   ExperienceCap: 100
