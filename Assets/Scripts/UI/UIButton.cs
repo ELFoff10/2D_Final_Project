@@ -22,10 +22,10 @@ public class UIButton : MonoBehaviour
 		AudioManager.Instance.EventInstances[(int)AudioNameEnum.GameBackgroundMusic].start();
 	}	
 	
-	public void GameBackgroundMusicLevel2Start()
-	{
-		AudioManager.Instance.EventInstances[(int)AudioNameEnum.GameBackgroundMusicLevel2].start();
-	}
+	// public void GameBackgroundMusicLevel2Start()
+	// {
+	// 	AudioManager.Instance.EventInstances[(int)AudioNameEnum.GameBackgroundMusicLevel2].start();
+	// }
 	
 	public void GameBackgroundMusicStop()
 	{

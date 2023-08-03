@@ -5,33 +5,33 @@ using UnityEngine.EventSystems;
 public class VirtualJoystick : MonoBehaviour, IDragHandler, IPointerUpHandler, IPointerDownHandler
 {
 	[SerializeField]
-	private Image m_VisualJoystick;
+	private Image _visualJoystick;
 
 	[SerializeField]
-	private Image m_Stick;
+	private Image _stick;
 
-	public Vector3 Value { get; private set; }
+	private Vector3 Value { get; set; }
 
 	public void OnDrag(PointerEventData eventData)
 	{
-		var position = Vector2.zero;
+		Vector2 position;
 
 		RectTransformUtility.ScreenPointToLocalPointInRectangle
-			(m_VisualJoystick.rectTransform, eventData.position, eventData.pressEventCamera, out position);
+			(_visualJoystick.rectTransform, eventData.position, eventData.pressEventCamera, out position);
 
-		var sizeDelta = m_VisualJoystick.rectTransform.sizeDelta;
+		var sizeDelta = _visualJoystick.rectTransform.sizeDelta;
 		position.x = (position.x / sizeDelta.x);
 		position.y = (position.y / sizeDelta.y);
 
-		var x = (m_VisualJoystick.rectTransform.pivot.x == 1f) ? position.x * 2 + 1 : position.x * 2 - 1;
-		var y = (m_VisualJoystick.rectTransform.pivot.y == 1f) ? position.y * 2 + 1 : position.y * 2 - 1;
+		var x = (_visualJoystick.rectTransform.pivot.x == 1f) ? position.x * 2 + 1 : position.x * 2 - 1;
+		var y = (_visualJoystick.rectTransform.pivot.y == 1f) ? position.y * 2 + 1 : position.y * 2 - 1;
 
 		Value = new Vector3(x, y, 0);
 		Value = (Value.magnitude > 1) ? Value.normalized : Value;
 
-		var delta = m_VisualJoystick.rectTransform.sizeDelta;
+		var delta = _visualJoystick.rectTransform.sizeDelta;
 
-		m_Stick.rectTransform.anchoredPosition = new Vector3(Value.x * (delta.x / 3)
+		_stick.rectTransform.anchoredPosition = new Vector3(Value.x * (delta.x / 3)
 			, Value.y * (delta.y) / 3);
 	}
 
@@ -43,6 +43,6 @@ public class VirtualJoystick : MonoBehaviour, IDragHandler, IPointerUpHandler, I
 	public void OnPointerUp(PointerEventData eventData)
 	{
 		Value = Vector3.zero;
-		m_Stick.rectTransform.anchoredPosition = Vector3.zero;
+		_stick.rectTransform.anchoredPosition = Vector3.zero;
 	}
 }

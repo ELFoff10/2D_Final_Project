@@ -53,11 +53,6 @@ public class GameManager : MonoSingleton<GameManager>
 	public bool ChoosingUpgrade;
 	public GameObject PlayerObject;
 
-	protected override void Awake()
-	{
-		base.Awake();
-	}
-
 	private void Start()
 	{
 		DisableScreens();
@@ -97,7 +92,7 @@ public class GameManager : MonoSingleton<GameManager>
 					AudioManager.Instance.EventInstances[(int)AudioNameEnum.PauseBackgroundMusic].start();
 					IsGameOver = true;
 					Time.timeScale = 0f;
-					Victory();
+					VictoryScreen.gameObject.SetActive(true);
 				}
 
 				break;
@@ -185,7 +180,6 @@ public class GameManager : MonoSingleton<GameManager>
 		if (chosenWeaponsData.Count != ChosenWeaponsUI.Count ||
 		    chosenPassiveItemsData.Count != ChosenPassiveItemsUI.Count)
 		{
-			Debug.Log("Chosen weapons and passive items data lists have different lengths");
 			return;
 		}
 
@@ -230,8 +224,8 @@ public class GameManager : MonoSingleton<GameManager>
 
 	private void UpdatesStopwatchDisplay()
 	{
-		int minutes = Mathf.FloorToInt(_stopwatchTime / 60);
-		int seconds = Mathf.FloorToInt(_stopwatchTime % 60);
+		var minutes = Mathf.FloorToInt(_stopwatchTime / 60);
+		var seconds = Mathf.FloorToInt(_stopwatchTime % 60);
 
 		StopwatchDisplay.text = $"{minutes:00}:{seconds:00}";
 	}
@@ -248,10 +242,5 @@ public class GameManager : MonoSingleton<GameManager>
 		Time.timeScale = 1f;
 		LevelUpScreen.SetActive(false);
 		ChangeState(GameState.Gameplay);
-	}
-
-	public void Victory()
-	{
-		VictoryScreen.gameObject.SetActive(true);
 	}
 }
