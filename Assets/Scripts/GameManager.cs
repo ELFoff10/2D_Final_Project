@@ -63,6 +63,7 @@ public class GameManager : MonoSingleton<GameManager>
 		switch (CurrentState)
 		{
 			case GameState.Gameplay:
+				
 				CheckForPauseAndResume();
 				UpdateStopwatch();
 				break;
@@ -81,7 +82,6 @@ public class GameManager : MonoSingleton<GameManager>
 					Time.timeScale = 0f;
 					LevelUpScreen.SetActive(true);
 				}
-
 				break;
 			case GameState.Victory:
 				if (!ChoosingUpgrade)
@@ -89,12 +89,12 @@ public class GameManager : MonoSingleton<GameManager>
 					AudioManager.Instance.EventInstances[(int)AudioNameEnum.Victory].start();
 					AudioManager.Instance.EventInstances[(int)AudioNameEnum.GameBackgroundMusic]
 						.stop(STOP_MODE.ALLOWFADEOUT);
-					AudioManager.Instance.EventInstances[(int)AudioNameEnum.PauseBackgroundMusic].start();
+					AudioManager.Instance.EventInstances[(int)AudioNameEnum.GameBackgroundMusicLevel2]
+						.stop(STOP_MODE.ALLOWFADEOUT);
 					IsGameOver = true;
 					Time.timeScale = 0f;
 					VictoryScreen.gameObject.SetActive(true);
 				}
-
 				break;
 			default:
 				throw new ArgumentOutOfRangeException();
@@ -113,8 +113,6 @@ public class GameManager : MonoSingleton<GameManager>
 			PreviousState = CurrentState;
 			ChangeState(GameState.Paused);
 			PauseScreen.SetActive(true);
-			AudioManager.Instance.EventInstances[(int)AudioNameEnum.GameBackgroundMusic].stop(STOP_MODE.ALLOWFADEOUT);
-			AudioManager.Instance.EventInstances[(int)AudioNameEnum.PauseBackgroundMusic].start();
 			Time.timeScale = 0f;
 		}
 	}
@@ -125,8 +123,6 @@ public class GameManager : MonoSingleton<GameManager>
 		{
 			ChangeState(PreviousState);
 			PauseScreen.SetActive(false);
-			AudioManager.Instance.EventInstances[(int)AudioNameEnum.GameBackgroundMusic].start();
-			AudioManager.Instance.EventInstances[(int)AudioNameEnum.PauseBackgroundMusic].stop(STOP_MODE.ALLOWFADEOUT);
 			Time.timeScale = 1f;
 		}
 	}
